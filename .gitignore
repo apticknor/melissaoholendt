@@ -1,0 +1,27 @@
+# Caches, Modules, etc #
+############################
+.sass-cache/
+node_modules/
+TODO.md
+
+# Config Files #
+####################
+.idea/*
+wp-config.php
+.htaccess
+
+# Logs #
+####################
+*.log
+
+# Other #
+######################
+.DS_Store
+.DS_Store?
+._.DS_Store
+._*
+.Trashes
+ehthumbs.db
+Thumbs.db
+.*.swp
+.tmp/
