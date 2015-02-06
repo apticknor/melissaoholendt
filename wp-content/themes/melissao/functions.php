@@ -34,4 +34,12 @@ function melissao_scripts() {
 
 add_action('wp_enqueue_scripts', 'melissao_scripts');
 
-?>
+/* ====================================================================================================
+ Customize Admin Panel
+==================================================================================================== */
+function hide_admin_pages(){
+    global $submenu;
+    unset($submenu['themes.php'][6]); // remove customize link
+    remove_action('admin_menu', '_add_themes_utility_last', 101); // remove theme editor link
+}
+add_action( 'admin_menu', 'hide_admin_pages');
