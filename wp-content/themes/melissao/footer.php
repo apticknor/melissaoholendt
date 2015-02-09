@@ -7,9 +7,14 @@
  */
 ?>
 
-        <div class="footer" role="contentinfo">
-            FOOTER
+        <div class="tier">
+            <div class="wrapper">
+                <div class="footer" role="contentinfo">
+                    FOOTER
+                </div>
+            </div>
         </div>
+
 
         <!-- WP FOOTER GENERATED -->
         <?php wp_footer(); ?>

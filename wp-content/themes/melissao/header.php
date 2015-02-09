@@ -20,6 +20,10 @@
     </head>
     <body <?php body_class(); ?>>
 
-        <div class="masthead" role="banner">
-            MASTHEAD!
+        <div class="tier">
+            <div class="wrapper">
+                <div class="masthead" role="banner">
+                    MASTHEAD!
+                </div>
+            </div>
         </div>

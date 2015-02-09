@@ -7,9 +7,15 @@
  */
 ?>
 
-<?php while (have_posts()) : the_post(); ?>
+<div class="tier">
+    <div class="wrapper">
 
-    <h1><?php the_title(); ?></h1>
-    <div><?php the_content(); ?></div>
+    <?php while (have_posts()) : the_post(); ?>
 
-<?php endwhile; ?>
+        <h1><?php the_title(); ?></h1>
+        <div><?php the_content(); ?></div>
+
+    <?php endwhile; ?>
+
+    </div>
+</div>
