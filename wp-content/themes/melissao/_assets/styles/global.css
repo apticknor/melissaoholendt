@@ -1,4 +1,9 @@
 /* ---------------------------------------------------------------------
+ Web fonts
+------------------------------------------------------------------------ */
+@import url(http://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic);
+
+/* ---------------------------------------------------------------------
  RESET CSS (thanks Eric Meyer)
 ------------------------------------------------------------------------ */
 html, body, div, span, applet, object, iframe,
@@ -113,21 +118,21 @@ textarea {
 ------------------------------------------------------------------------ */
 body {
     background-color: #ffffff;
-    color: #000000;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.4;
+    color: #191919;
+    font-family: "Arvo", Helvetica, arial, serif;
+    font-size: 14px;
+    line-height: 1.8;
 }
 
 a {
-    text-decoration: none;
-    color: #000000;
+    text-decoration: underline;
+    color: #474747;
 }
 
 a:hover,
 a:focus {
     text-decoration: none;
-    color: #000000;
+    color: #9f9f9f;
 }
 
 /* ---------------------------------------------------------------------
@@ -145,6 +150,83 @@ a:focus {
 }
 
 /* ---------------------------------------------------------------------
+ Landmark - Masthead
+------------------------------------------------------------------------ */
+.masthead {
+
+}
+
+.masthead-logo {
+    padding: 30px 0;
+    text-align: center;
+}
+
+.masthead-logo a {
+    text-decoration: none;
+}
+
+.masthead-nav {
+    padding: 8px 0;
+    border-top: 1px solid #cecac3;
+    border-bottom: 1px solid #cecac3;
+}
+
+/* ---------------------------------------------------------------------
+ Landmark - Navigation
+------------------------------------------------------------------------ */
+.nav {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 0; /* remove the space between inline block elements */
+    text-align: center;
+}
+
+.nav-item {
+    display: inline-block;
+    padding: 0 17px;
+    vertical-align: middle;
+}
+
+.nav-item a {
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-item > a:hover,
+.nav-item > a:focus {
+    color: #996666;
+    text-decoration: none;
+}
+
+.nav-item-subnav {
+    font-size: 0; /* remove the space between inline block elements */
+}
+
+.nav-item-subnav-item {
+    display: inline-block;
+    padding: 0 5px;
+    vertical-align: middle;
+}
+
+.nav-item-subnav-item:first-child {
+    padding-left: 0;
+}
+
+.nav-item-subnav-item img {
+    display: block;
+    height: 20px;
+    width: 20px;
+}
+
+/* ---------------------------------------------------------------------
+ Landmark - Footer
+------------------------------------------------------------------------ */
+.footer {
+    display: none;
+}
+
+/* ---------------------------------------------------------------------
  Layout Module - Tier
 ------------------------------------------------------------------------ */
 .tier {
@@ -156,7 +238,7 @@ a:focus {
  Layout Module - Wrapper
 ------------------------------------------------------------------------ */
 .wrapper {
-    max-width: 980px;
+    max-width: 936px;
     min-width: 200px;
     margin: 0 auto;
     padding: 0 10px;

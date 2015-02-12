@@ -43,3 +43,7 @@ function hide_admin_pages(){
     remove_action('admin_menu', '_add_themes_utility_last', 101); // remove theme editor link
 }
 add_action( 'admin_menu', 'hide_admin_pages');
+
+if (function_exists('acf_add_options_page')) {
+    acf_add_options_page();
+}
