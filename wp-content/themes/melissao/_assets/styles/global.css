@@ -127,6 +127,12 @@ body {
 a {
     text-decoration: underline;
     color: #474747;
+    /* hover effect */
+    -webkit-transition: color .12s linear;
+       -moz-transition: color .12s linear;
+        -ms-transition: color .12s linear;
+         -o-transition: color .12s linear;
+            transition: color .12s linear;
 }
 
 a:hover,
@@ -186,7 +192,7 @@ a:focus {
     vertical-align: middle;
 }
 
-.nav-item a {
+.nav-item > a {
     font-size: 14px;
     text-decoration: none;
     text-transform: uppercase;
@@ -217,8 +223,20 @@ a:focus {
     display: block;
     height: 20px;
     width: 20px;
+    opacity: .7;
+    /* hover effect */
+    -webkit-transition: opacity .12s linear;
+       -moz-transition: opacity .12s linear;
+        -ms-transition: opacity .12s linear;
+         -o-transition: opacity .12s linear;
+            transition: opacity .12s linear;
 }
 
+
+.nav-item-subnav-item a:hover img,
+.nav-item-subnav-item a:focus img {
+    opacity: 1;
+}
 /* ---------------------------------------------------------------------
  Landmark - Footer
 ------------------------------------------------------------------------ */
