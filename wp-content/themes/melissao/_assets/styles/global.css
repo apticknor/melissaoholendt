@@ -180,68 +180,69 @@ a:focus {
 /* ---------------------------------------------------------------------
  Landmark - Navigation
 ------------------------------------------------------------------------ */
-.nav {
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-    font-size: 0; /* remove the space between inline block elements */
-    text-align: center;
+.nav-list {
+    width: 285px;
+    font-size: 0; /* remove space between inline block elements */
+    margin: 0 auto; /* center it */
+    text-align: center; /* center text of children */
 }
 
-.nav-item {
+.nav-list > li {
     display: inline-block;
-    padding: 0 17px;
-    vertical-align: middle;
 }
 
-.nav-item > a {
-    font-size: 14px;
+.nav-list a {
+    display: inline-block;
+    padding: 2px 8px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 12px;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-.nav-item > a:hover,
-.nav-item > a:focus {
+.nav-list a:hover,
+.nav-list a:focus {
     color: #996666;
     text-decoration: none;
 }
 
-.nav-item-subnav {
-    font-size: 0; /* remove the space between inline block elements */
+@media (min-width: 480px) {
+    .nav-list a {
+        font-size: 13px;
+    }
 }
 
-.nav-item-subnav-item {
-    display: inline-block;
-    padding: 0 5px;
-    vertical-align: middle;
+@media (min-width: 660px) {
+    .nav-list {
+        width: 100%; /* reset */
+        margin: 0; /* reset */
+    }
+
+    .nav-list a {
+        padding: 2px 12px;
+    }
 }
 
-.nav-item-subnav-item:first-child {
-    padding-left: 0;
+@media (min-width: 780px) {
+    .nav-list a {
+        padding: 2px 20px;
+    }
 }
 
-.nav-item-subnav-item img {
-    display: block;
-    height: 20px;
-    width: 20px;
-    opacity: .7;
-    /* hover effect */
-    -webkit-transition: opacity .12s linear;
-       -moz-transition: opacity .12s linear;
-        -ms-transition: opacity .12s linear;
-         -o-transition: opacity .12s linear;
-            transition: opacity .12s linear;
+@media (min-width: 840px) {
+    .nav-list a {
+        padding: 2px 25px;
+        font-size: 14px;
+    }
 }
 
-
-.nav-item-subnav-item a:hover img,
-.nav-item-subnav-item a:focus img {
-    opacity: 1;
-}
 /* ---------------------------------------------------------------------
  Landmark - Footer
 ------------------------------------------------------------------------ */
 .footer {
-    display: none;
+    border-top: 1px solid #cecac3;
+    display: none; /* temp */
 }
 
 /* ---------------------------------------------------------------------
