@@ -11,9 +11,16 @@
     <div class="wrapper">
 
     <?php while (have_posts()) : the_post(); ?>
-
-        <h1><?php the_title(); ?></h1>
-        <div><?php the_content(); ?></div>
+        <div class="section">
+            <div class="section-hd">
+                <h1 class="isVisuallyHidden"><?php the_title(); ?></h1>
+            </div>
+            <div class="section-bd">
+                <div class="userContent">
+                    <?php the_content(); ?>
+                </div>
+            </div>
+        </div>
 
     <?php endwhile; ?>
 

@@ -52,10 +52,6 @@ table {
     border-spacing: 0;
 }
 
-:focus {
-    outline: 0;
-}
-
 html {
     overflow-y: scroll; /* Always show a vertical scrollbar, even when there is no scrolling */
 }
@@ -159,7 +155,7 @@ a:focus {
  Landmark - Masthead
 ------------------------------------------------------------------------ */
 .masthead {
-
+    margin-bottom: 25px;
 }
 
 .masthead-logo {
@@ -267,4 +263,195 @@ a:focus {
     .wrapper {
         padding: 0 20px;
     }
+}
+
+/* ---------------------------------------------------------------------
+ Content Module - User Content
+------------------------------------------------------------------------ */
+.userContent {
+    word-break: break-word;
+}
+
+.userContent a {
+
+}
+
+.userContent a:hover,
+.userContent a:focus {
+
+}
+
+.userContent p {
+    margin: 0 0 1rem 0;
+}
+
+.userContent h1,
+.userContent h2,
+.userContent h3,
+.userContent h4,
+.userContent h5,
+.userContent h6 {
+    margin: 0 0 1rem 0;
+}
+
+
+.userContent blockquote {
+    margin: 0 0 1rem 0;
+}
+
+.userContent blockquote > *:last-child {
+    margin-bottom: 0 !important;
+}
+
+.userContent address {
+    margin: 0 0 1rem 0;
+    font-style: italic;
+}
+
+.userContent strong,
+.userContent b {
+    font-weight: bold;
+}
+
+.userContent em,
+.userContent i {
+    font-style: italic;
+}
+
+.userContent del,
+.userContent strike,
+.userContent s {
+    text-decoration: line-through;
+}
+
+.userContent u,
+.userContent ins {
+    text-decoration: underline;
+}
+
+.userContent sup {
+    vertical-align: super;
+    font-size: smaller;
+}
+
+.userContent sub {
+    vertical-align: sub;
+    font-size: smaller;
+}
+
+.userContent big {
+    font-size: larger;
+}
+
+.userContent small {
+    font-size: smaller;
+}
+
+.userContent abbr,
+.userContent acronym {
+    border-bottom: dotted 1px;
+}
+
+.userContent cite,
+.userContent dfn {
+    font-style: italic;
+}
+
+.userContent q {
+    font-style: italic;
+}
+
+.userContent bdo {
+    direction: rtl;
+}
+
+.userContent ul,
+.userContent ol,
+.userContent dl {
+    margin: 0 0 1rem 0;
+}
+
+.userContent ul {
+    list-style-type: disc;
+}
+
+.userContent ol {
+    list-style-type: decimal;
+}
+
+.userContent dt {
+    font-weight: bold;
+}
+
+.userContent li,
+.userContent dd {
+    margin: 0 0 0 1rem;
+}
+
+.userContent ul ul,
+.userContent ul ol,
+.userContent ul dl,
+.userContent ol ul,
+.userContent ol ol,
+.userContent ol dl,
+.userContent dl ul,
+.userContent dl ol,
+.userContent dl dl {
+    margin-bottom: 0;
+}
+
+.userContent ol ul,
+.userContent ul ul {
+    list-style-type: circle;
+}
+
+.userContent ol ol ul,
+.userContent ol ul ul,
+.userContent ul ol ul,
+.userContent ul ul ul {
+    list-style-type: square;
+}
+
+.userContent hr {
+
+}
+
+.userContent table {
+    margin: 0 0 1rem 0;
+    width: 100% !important;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.userContent caption {
+    font-size: smaller;
+}
+
+.userContent tr {
+    vertical-align: middle;
+}
+
+.userContent tbody {
+    vertical-align: middle;
+}
+
+.userContent thead {
+    vertical-align: middle;
+}
+
+.userContent tfoot {
+    vertical-align: middle;
+}
+
+.userContent td {
+    vertical-align: inherit;
+    text-align: left;
+    padding: 2px 10px;
+}
+
+.userContent th {
+    vertical-align: inherit;
+    text-align: left;
+    font-weight: normal;
+    padding: 2px 10px;
 }
