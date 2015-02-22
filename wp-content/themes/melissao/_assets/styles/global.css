@@ -266,6 +266,35 @@ a:focus {
 }
 
 /* ---------------------------------------------------------------------
+ Layout Module - Section
+------------------------------------------------------------------------ */
+.section:before,
+.section:after {
+    content: " ";
+    display: table;
+}
+
+.section:after {
+    clear: both;
+}
+
+.section-media {
+    margin-bottom: 1em;
+}
+
+@media (min-width: 680px) {
+    .section-bd {
+        overflow: hidden; /* trigger BFC to prevent wrapping */
+    }
+
+    .section-media {
+        max-width: 46%;
+        float: right;
+        margin-left: 40px;
+    }
+}
+
+/* ---------------------------------------------------------------------
  Content Module - User Content
 ------------------------------------------------------------------------ */
 .userContent {
