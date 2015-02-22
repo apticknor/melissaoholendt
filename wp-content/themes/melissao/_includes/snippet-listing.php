@@ -52,7 +52,7 @@
         <?php } // end author fork ?>
 
     <?php else: ?>
-        <?php get_template_part('_includes/snippet', 'error'); ?>
+        <?php the_field('text_snippet_error_message', 'option'); ?>
     <?php endif; ?>
 
     </div>

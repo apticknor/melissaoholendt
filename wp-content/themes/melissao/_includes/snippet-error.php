@@ -10,8 +10,7 @@
 <div class="tier">
     <div class="wrapper">
 
-        <h1>Whoops!</h1>
-        <p>An error occurred and the content you're looking for couldn't be found.</p>
+        <?php the_field('text_snippet_error_message', 'option'); ?>
 
     </div>
 </div>
