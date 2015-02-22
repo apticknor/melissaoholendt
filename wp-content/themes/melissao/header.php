@@ -32,7 +32,7 @@
                         <div class="nav" role="navigation">
                             <ul class="nav-list">
                                 <?php
-                                    $nav_items = wp_get_nav_menu_items(4);
+                                    $nav_items = wp_get_nav_menu_items(21);
                                     foreach ((array)$nav_items as $key => $nav_item ) {
                                         $title = $nav_item->title;
                                         $url = $nav_item->url;
