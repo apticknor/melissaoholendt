@@ -11,9 +11,9 @@
 <html <?php language_attributes(); ?> class="no-js">
     <head>
         <!-- META DATA -->
-        <meta charset="<?php bloginfo( 'charset' ); ?>">
+        <meta charset="<?php bloginfo('charset'); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+        <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
         <!-- WP HEAD GENERATED -->
         <?php wp_head(); ?>
@@ -25,7 +25,11 @@
                 <div class="masthead" role="banner">
                     <div class="masthead-logo">
                         <a href="<?php echo site_url(); ?>">
-                            <img src="<?php bloginfo('template_directory'); ?>/_assets/media/images/logo.jpg" alt="<?php bloginfo('name'); ?>" />
+                            <?php if(get_field('branding_logo', 'option')): ?>
+                            <img src="<?php the_field('branding_logo', 'option'); ?>" alt="<?php bloginfo('name'); ?>" />
+                            <?php else: ?>
+                                <? bloginfo('name'); ?>
+                            <?php endif; ?>
                         </a>
                     </div>
                     <div class="masthead-nav">
