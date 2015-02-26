@@ -63,6 +63,7 @@ html {
 
 img, audio, canvas, video, picture, iframe, embed {
     max-width: 100% !important; /* media should never overflow it's container */
+    height: auto !important;
 }
 
 /* ---------------------------------------------------------------------
@@ -190,7 +191,7 @@ a:focus {
 .nav-list a {
     display: inline-block;
     padding: 2px 8px;
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-family: "Palatino Linotype", "Palatino LT STD", Palatino, "Book Antiqua", Georgia, serif;
     font-size: 12px;
     text-decoration: none;
     text-transform: uppercase;
