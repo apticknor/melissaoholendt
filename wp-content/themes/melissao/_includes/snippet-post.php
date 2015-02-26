@@ -16,7 +16,9 @@
         <?php if (has_post_thumbnail()) { ?>
     	    <?php the_post_thumbnail(); ?>
         <?php } ?>
-        <?php the_content(); ?>
+        <div class="userContent">
+            <?php the_content(); ?>
+        </div>
         <?php if ((has_category())) { ?>
             Filed Under: <?php the_category(', '); ?>
         <?php } ?>
