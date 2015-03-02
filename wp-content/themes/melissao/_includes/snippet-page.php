@@ -11,13 +11,14 @@
     <div class="wrapper">
 
     <?php while (have_posts()) : the_post(); ?>
+    <?php $pageImage = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large'); ?>
         <div class="section">
             <div class="section-hd">
                 <h1 class="isVisuallyHidden"><?php the_title(); ?></h1>
             </div>
             <?php if (has_post_thumbnail()) { ?>
             <div class="section-media">
-                <img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>" alt="" />
+                <img src="<?php echo $pageImage[0]; ?>" alt="" />
             </div>
             <?php } ?>
             <div class="section-bd">
