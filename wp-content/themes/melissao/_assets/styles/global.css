@@ -1,7 +1,8 @@
 /* ---------------------------------------------------------------------
  Web fonts
 ------------------------------------------------------------------------ */
-@import url(http://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic);
+@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic);
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic);
 
 /* ---------------------------------------------------------------------
  RESET CSS (thanks Eric Meyer)
@@ -116,7 +117,7 @@ textarea {
 body {
     background-color: #ffffff;
     color: #191919;
-    font-family: "Arvo", Helvetica, arial, serif;
+    font-family: "Noto Sans", Helvetica, arial, serif;
     font-size: 14px;
     line-height: 1.8;
 }
@@ -153,7 +154,7 @@ a:focus {
 }
 
 /* ---------------------------------------------------------------------
- Landmark - Masthead
+ Masthead
 ------------------------------------------------------------------------ */
 .masthead {
     margin-bottom: 25px;
@@ -175,7 +176,7 @@ a:focus {
 }
 
 /* ---------------------------------------------------------------------
- Landmark - Navigation
+ Navigation
 ------------------------------------------------------------------------ */
 .nav-list {
     width: 285px;
@@ -191,7 +192,8 @@ a:focus {
 .nav-list a {
     display: inline-block;
     padding: 2px 8px;
-    font-family: "Palatino Linotype", "Palatino LT STD", Palatino, "Book Antiqua", Georgia, serif;
+    /* font-family: "Palatino Linotype", "Palatino LT STD", Palatino, "Book Antiqua", Georgia, serif; */
+    font-family: "Lora", Georgia, Times, "Times New Roman", serif;
     font-size: 12px;
     text-decoration: none;
     text-transform: uppercase;
@@ -235,7 +237,7 @@ a:focus {
 }
 
 /* ---------------------------------------------------------------------
- Landmark - Footer
+ Footer
 ------------------------------------------------------------------------ */
 .footer {
     border-top: 1px solid #cecac3;
@@ -243,7 +245,7 @@ a:focus {
 }
 
 /* ---------------------------------------------------------------------
- Layout Module - Tier
+ Tier
 ------------------------------------------------------------------------ */
 .tier {
     overflow: hidden; /* clear anything in a tier and prevent overflow */
@@ -251,7 +253,7 @@ a:focus {
 }
 
 /* ---------------------------------------------------------------------
- Layout Module - Wrapper
+ Wrapper
 ------------------------------------------------------------------------ */
 .wrapper {
     max-width: 936px;
@@ -267,7 +269,7 @@ a:focus {
 }
 
 /* ---------------------------------------------------------------------
- Layout Module - Section
+ Section
 ------------------------------------------------------------------------ */
 .section:before,
 .section:after {
@@ -296,7 +298,7 @@ a:focus {
 }
 
 /* ---------------------------------------------------------------------
- Layout Module - FAQ
+ FAQ
 ------------------------------------------------------------------------ */
 .faq-question {
     font-weight: bold;
@@ -307,7 +309,155 @@ a:focus {
 }
 
 /* ---------------------------------------------------------------------
- Content Module - User Content
+ Pagination
+------------------------------------------------------------------------ */
+.pagination {
+    padding: 5px 10px;
+    border: 1px solid #bfbfbf;
+    background-color: #efefef;
+    text-align: center;
+}
+
+/* ---------------------------------------------------------------------
+ Slab
+------------------------------------------------------------------------ */
+.slab {
+    padding: 20px;
+    background-color: #efefef;
+}
+
+/* ---------------------------------------------------------------------
+ Listing
+------------------------------------------------------------------------ */
+.listing {
+
+}
+
+.listing-hd {
+
+}
+
+.listing-bd {
+
+}
+
+.listing-nav {
+
+}
+
+.listing-ft {
+
+}
+
+/* ---------------------------------------------------------------------
+ Vertical List
+------------------------------------------------------------------------ */
+.vlist {
+
+}
+
+.vlist > *:not(:last-child) {
+    margin-bottom: 25px;
+}
+
+/* ---------------------------------------------------------------------
+ Post
+------------------------------------------------------------------------ */
+.post {
+
+}
+
+.post-hd {
+
+}
+
+.post-meta {
+
+}
+
+.post-bd {
+
+}
+
+.post-ft {
+
+}
+
+/* ---------------------------------------------------------------------
+ Columns
+------------------------------------------------------------------------ */
+.columns {
+
+}
+
+.columns-pillar {
+
+}
+
+/* ---------------------------------------------------------------------
+ Archive
+------------------------------------------------------------------------ */
+.archive {
+
+}
+
+.archive-hd {
+
+}
+
+.archive-bd {
+
+}
+
+/* ---------------------------------------------------------------------
+ Piano List
+------------------------------------------------------------------------ */
+.pianoList {
+
+}
+
+.pianoList > * {
+
+}
+
+/* ---------------------------------------------------------------------
+ Headings
+------------------------------------------------------------------------ */
+.hdg {
+    /* font-family: "Palatino Linotype", "Palatino LT STD", Palatino, "Book Antiqua", Georgia, serif; */
+    font-family: "Lora", Georgia, Times, "Times New Roman", serif;
+}
+
+.hdg_lg {
+    font-size: 32px;
+    line-height: 42px;
+}
+
+.hdg_md {
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.hdg_sm {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.hdg_xs {
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.mix-hdg_lower {
+    text-transform: lowercase;
+}
+
+.hdg a {
+    text-decoration: none;
+}
+
+/* ---------------------------------------------------------------------
+ User Content
 ------------------------------------------------------------------------ */
 .userContent {
     color: inherit;
@@ -345,6 +495,28 @@ a:focus {
     margin: 0 0 1rem 0;
 }
 
+.userContent h1 {
+    font-size: 32px;
+    line-height: 42px;
+}
+
+.userContent h2 {
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.userContent h3 {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.userContent h4,
+.userContent h5,
+.userContent h6 {
+    font-size: 14px;
+    line-height: 18px;
+}
+
 .userContent h1,
 .userContent h2,
 .userContent h3,
@@ -354,6 +526,14 @@ a:focus {
     margin: 0 0 1rem 0;
 }
 
+.userContent h1 a,
+.userContent h2 a,
+.userContent h3 a,
+.userContent h4 a,
+.userContent h5 a,
+.userContent h6 a {
+    text-decoration: none;
+}
 
 .userContent blockquote {
     margin: 0 0 1rem 0;
