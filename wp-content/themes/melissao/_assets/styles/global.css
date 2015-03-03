@@ -329,33 +329,23 @@ a:focus {
 /* ---------------------------------------------------------------------
  Listing
 ------------------------------------------------------------------------ */
-.listing {
-
-}
-
-.listing-hd {
-
-}
-
 .listing-bd {
+    margin-bottom: 25px;
+}
 
+@media (min-width: 840px) {
+    .listing-bd {
+        margin-bottom: 50px;
+    }
 }
 
 .listing-nav {
-
-}
-
-.listing-ft {
-
+    margin-bottom: 25px;
 }
 
 /* ---------------------------------------------------------------------
  Vertical List
 ------------------------------------------------------------------------ */
-.vlist {
-
-}
-
 .vlist > *:not(:last-child) {
     margin-bottom: 25px;
 }
@@ -386,38 +376,88 @@ a:focus {
 /* ---------------------------------------------------------------------
  Columns
 ------------------------------------------------------------------------ */
-.columns {
+@media (min-width: 740px) {
+    .columns:before,
+    .columns:after {
+        content: " ";
+        display: table;
+    }
 
+    .columns:after {
+        clear: both;
+    }
+
+    .columns {
+        margin-left: -10px;
+    }
+
+    .columns-pillar {
+        float: left;
+        width: calc(33.3% - 10px);
+        padding-left: 10px;
+    }
 }
 
-.columns-pillar {
+@media (min-width: 840px) {
+    .columns {
+        margin-left: -20px;
+    }
 
+    .columns-pillar {
+        width: calc(33.3% - 20px);
+        padding-left: 20px;
+    }
 }
 
 /* ---------------------------------------------------------------------
  Archive
 ------------------------------------------------------------------------ */
-.archive {
-
-}
-
 .archive-hd {
-
+    margin-bottom: 5px;
+    padding: 5px 10px; /* matches pianoList anchor padding */
 }
 
 .archive-bd {
+    margin-bottom: 25px;
+}
 
+@media (min-width: 740px) {
+    .archive-bd {
+        margin-bottom: 0; /* strip bottom margin with columns separate */
+    }
+}
+
+.archive-bd_noPush {
+    margin-bottom: 0;
 }
 
 /* ---------------------------------------------------------------------
  Piano List
 ------------------------------------------------------------------------ */
 .pianoList {
-
+    border-bottom: 1px solid #cecac3;
 }
 
 .pianoList > * {
+    border-top: 1px solid #cecac3;
+}
 
+.pianoList > * > a {
+    display: block;
+    padding: 3px 10px; /* matches archive-hd padding */
+    text-decoration: none;
+    /* hover effect - timing matches regular link hovers */
+    -webkit-transition: background-color .12s linear;
+       -moz-transition: background-color .12s linear;
+        -ms-transition: background-color .12s linear;
+         -o-transition: background-color .12s linear;
+            transition: background-color .12s linear;
+}
+
+.pianoList > * > a:hover,
+.pianoList > * > a:focus {
+    color: #191919; /* NO HOVER COLOR IS WANTED HERE - override the hover set on base anchor */
+    background-color: #cecac3;
 }
 
 /* ---------------------------------------------------------------------

@@ -149,7 +149,7 @@
                                 <div class="archive-hd">
                                     <h2 class="hdg hdg_sm mix-hdg_lower">Recent Posts</h2>
                                 </div>
-                                <div class="archive-bd">
+                                <div class="archive-bd archive-bd_noPush">
                                     <ol class="pianoList">
                                     <?php
                                         $posts_args = array(
