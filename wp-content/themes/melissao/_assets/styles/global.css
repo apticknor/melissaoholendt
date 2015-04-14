@@ -1,10 +1,4 @@
 /* ---------------------------------------------------------------------
- Web fonts
------------------------------------------------------------------------- */
-@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic);
-@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic);
-
-/* ---------------------------------------------------------------------
  RESET CSS (thanks Eric Meyer)
 ------------------------------------------------------------------------ */
 html, body, div, span, applet, object, iframe,
@@ -117,8 +111,8 @@ textarea {
 body {
     background-color: #ffffff;
     color: #191919;
-    font-family: "Noto Sans", Helvetica, arial, serif;
-    font-size: 14px;
+    font-family: Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+    font-size: 18px;
     line-height: 1.8;
 }
 
@@ -135,8 +129,8 @@ a {
 
 a:hover,
 a:focus {
-    text-decoration: none;
-    color: #9f9f9f;
+    text-decoration: underline;
+    color: #f1b9ae;
 }
 
 /* ---------------------------------------------------------------------
@@ -157,90 +151,47 @@ a:focus {
  Masthead
 ------------------------------------------------------------------------ */
 .masthead {
-    margin-bottom: 25px;
-}
-
-.masthead-logo {
-    padding: 30px 0;
-    text-align: center;
-}
-
-.masthead-logo a {
-    text-decoration: none;
-}
-
-.masthead-nav {
-    padding: 8px 0;
-    border-top: 1px solid #cecac3;
-    border-bottom: 1px solid #cecac3;
 }
 
 /* ---------------------------------------------------------------------
  Navigation
 ------------------------------------------------------------------------ */
+.nav {
+    margin: 10px 0 20px 0;
+}
+
 .nav-list {
-    width: 285px;
-    font-size: 0; /* remove space between inline block elements */
-    margin: 0 auto; /* center it */
-    text-align: center; /* center text of children */
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
 }
 
 .nav-list > li {
-    display: inline-block;
+
 }
 
 .nav-list a {
+    padding: 5px 0;
     display: inline-block;
-    padding: 2px 8px;
-    /* font-family: "Palatino Linotype", "Palatino LT STD", Palatino, "Book Antiqua", Georgia, serif; */
-    font-family: "Lora", Georgia, Times, "Times New Roman", serif;
-    font-size: 12px;
-    text-decoration: none;
+    color: #f1b9ae;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 100;
     text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.nav-list a:hover,
-.nav-list a:focus {
-    color: #996666;
     text-decoration: none;
-}
-
-@media (min-width: 480px) {
-    .nav-list a {
-        font-size: 13px;
-    }
-}
-
-@media (min-width: 660px) {
-    .nav-list {
-        width: 100%; /* reset */
-        margin: 0; /* reset */
-    }
-
-    .nav-list a {
-        padding: 2px 12px;
-    }
-}
-
-@media (min-width: 780px) {
-    .nav-list a {
-        padding: 2px 20px;
-    }
-}
-
-@media (min-width: 840px) {
-    .nav-list a {
-        padding: 2px 25px;
-        font-size: 14px;
-    }
+    letter-spacing: 4px;
 }
 
 /* ---------------------------------------------------------------------
  Footer
 ------------------------------------------------------------------------ */
 .footer {
-    border-top: 1px solid #cecac3;
     display: none; /* temp */
 }
 
@@ -252,11 +203,15 @@ a:focus {
     min-height: 20px; /* a tier should always be visible */
 }
 
+.tier_brand {
+    background-color: #f1b9ae;
+}
+
 /* ---------------------------------------------------------------------
  Wrapper
 ------------------------------------------------------------------------ */
 .wrapper {
-    max-width: 936px;
+    max-width: 940px;
     min-width: 200px;
     margin: 0 auto;
     padding: 0 10px;
@@ -464,8 +419,7 @@ a:focus {
  Headings
 ------------------------------------------------------------------------ */
 .hdg {
-    /* font-family: "Palatino Linotype", "Palatino LT STD", Palatino, "Book Antiqua", Georgia, serif; */
-    font-family: "Lora", Georgia, Times, "Times New Roman", serif;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .hdg_lg {
