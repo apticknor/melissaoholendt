@@ -7,5 +7,5 @@
  */
 ?>
 <?php get_header(); ?>
-<?php get_template_part('_includes/snippet', 'home'); ?>
+<?php get_template_part('_includes/snippet', 'listing'); ?>
 <?php get_footer(); ?>
