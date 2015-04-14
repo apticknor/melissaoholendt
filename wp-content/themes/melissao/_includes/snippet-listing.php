@@ -97,7 +97,7 @@
                                         'show_count'         => 0,
                                         'hide_empty'         => 1,
                                         'use_desc_for_title' => 1,
-                                        'child_of'           => 1,
+                                        'child_of'           => 0,
                                         'feed'               => '',
                                         'feed_type'          => '',
                                         'feed_image'         => '',
@@ -116,29 +116,6 @@
                                         'walker'             => null
                                     );
                                     wp_list_categories($category_args);
-                                    ?>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="columns-pillar">
-                            <div class="archive">
-                                <div class="archive-hd">
-                                    <h2 class="hdg hdg_sm mix-hdg_lower">Posts by Date</h2>
-                                </div>
-                                <div class="archive-bd">
-                                    <ol class="pianoList">
-                                    <?php $date_args = array(
-                                        'type'            => 'yearly',
-                                        'limit'           => '',
-                                        'format'          => 'html',
-                                        'before'          => '',
-                                        'after'           => '',
-                                        'show_post_count' => false,
-                                        'echo'            => 1,
-                                        'order'           => 'DESC'
-                                    );
-                                    wp_get_archives($date_args);
                                     ?>
                                     </ol>
                                 </div>
