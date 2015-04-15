@@ -9,8 +9,8 @@
 
 <div class="tier">
     <div class="wrapper">
-
-
-
+        <div class="content" role="main">
+            Home Page
+        </div>
     </div>
 </div>

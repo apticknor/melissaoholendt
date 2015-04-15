@@ -9,41 +9,53 @@
 
 <div class="tier">
     <div class="wrapper">
-
-    <?php while (have_posts()) : the_post(); ?>
-    <?php $pageImage = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large'); ?>
-        <div class="section">
-            <div class="section-hd">
-                <h1 class="isVisuallyHidden"><?php the_title(); ?></h1>
-            </div>
-            <?php if (has_post_thumbnail()) { ?>
-            <div class="section-media">
-                <img src="<?php echo $pageImage[0]; ?>" alt="" />
-            </div>
-            <?php } ?>
-            <div class="section-bd">
-                <div class="userContent">
-                    <?php the_content(); ?>
+        <div class="content" role="main">
+        <?php while (have_posts()) : the_post(); ?>
+        <?php $pageImage = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large'); ?>
+            <div class="section">
+                <div class="section-hd">
+                    <h1 class="isVisuallyHidden"><?php the_title(); ?></h1>
                 </div>
-            </div>
-            <?php if( have_rows('faq') ): ?>
-            <div class="section-ancillary">
-                <?php while ( have_rows('faq') ) : the_row(); ?>
-                <div class="faq">
-                    <div class="faq-question">
-                        <?php the_sub_field('faq_question'); ?>
+                <?php
+                    if (has_post_thumbnail()) {
+
+                        $featuredImgLocationClass = "";
+
+                        if (get_field('featured_image_location') == "left") {
+                            $featuredImgLocationClass = "section-media_left";
+                        }
+
+                        if (get_field('featured_image_location') == "right") {
+                            $featuredImgLocationClass = "section-media_right";
+                        }
+                ?>
+                <div class="section-media <?php echo $featuredImgLocationClass; ?>">
+                    <img src="<?php echo $pageImage[0]; ?>" alt="" />
+                </div>
+                <?php } ?>
+                <div class="section-bd">
+                    <div class="userContent">
+                        <?php the_content(); ?>
                     </div>
-                    <div class="faq-answer">
-                        <div class="userContent">
-                            <?php the_sub_field('faq_answer'); ?>
+                </div>
+                <?php if( have_rows('faq') ): ?>
+                <div class="section-ancillary">
+                    <?php while ( have_rows('faq') ) : the_row(); ?>
+                    <div class="faq">
+                        <div class="faq-question">
+                            <?php the_sub_field('faq_question'); ?>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="userContent">
+                                <?php the_sub_field('faq_answer'); ?>
+                            </div>
                         </div>
                     </div>
+                    <?php endwhile; ?>
                 </div>
-                <?php endwhile; ?>
+                <?php endif; ?>
             </div>
-            <?php endif; ?>
+        <?php endwhile; ?>
         </div>
-    <?php endwhile; ?>
-
     </div>
 </div>

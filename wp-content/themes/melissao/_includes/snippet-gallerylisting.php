@@ -9,9 +9,9 @@
 
 <div class="tier">
     <div class="wrapper">
-
-        Gallery Archive Goes Here!
-
+        <div class="content" role="main">
+            Gallery Archive Goes Here!
+        </div>
     </div>
 </div>
 

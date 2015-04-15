@@ -9,9 +9,9 @@
 
 <div class="tier">
     <div class="wrapper">
-
-        Gallery Single Entry Goes Here!
-
+        <div class="content" role="main">
+            Gallery Single Entry Goes Here!
+        </div>
     </div>
 </div>
 

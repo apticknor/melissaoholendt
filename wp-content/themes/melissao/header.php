@@ -43,14 +43,28 @@
             <div class="wrapper">
                 <div class="nav" role="navigation">
                     <ul class="nav-list">
-                        <?php
-                            $nav_items = wp_get_nav_menu_items(21);
-                            foreach ((array)$nav_items as $key => $nav_item ) {
-                                $title = $nav_item->title;
-                                $url = $nav_item->url;
-                        ?>
-                        <li><a href="<?php echo $url ?>"><?php echo $title ?></a></li>
-                        <?php } ?>
+                    <?php
+                        $navPrimaryArgs = array(
+                            'theme_location'  => '',
+                            'menu'            => '',
+                            'container'       => false,
+                            'container_class' => '',
+                            'container_id'    => '',
+                            'menu_class'      => '',
+                            'menu_id'         => '',
+                            'echo'            => true,
+                            'fallback_cb'     => '',
+                            'before'          => '',
+                            'after'           => '',
+                            'link_before'     => '',
+                            'link_after'      => '',
+                            'items_wrap'      => '%3$s',
+                            'depth'           => 0,
+                            'walker'          => ''
+                        );
+
+                        wp_nav_menu($navPrimaryArgs);
+                    ?>
                     </ul>
                 </div>
             </div>

@@ -109,8 +109,8 @@ textarea {
  Base Styles
 ------------------------------------------------------------------------ */
 body {
-    background-color: #ffffff;
-    color: #191919;
+    background-color: #f2f2f2; /* creates the appearance of a sticky footer and colors it's background */
+    color: #555555;
     font-family: Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
     font-size: 18px;
     line-height: 1.8;
@@ -130,7 +130,7 @@ a {
 a:hover,
 a:focus {
     text-decoration: underline;
-    color: #f1b9ae;
+    color: #f9b7a9;
 }
 
 /* ---------------------------------------------------------------------
@@ -151,13 +151,14 @@ a:focus {
  Masthead
 ------------------------------------------------------------------------ */
 .masthead {
+
 }
 
 /* ---------------------------------------------------------------------
  Navigation
 ------------------------------------------------------------------------ */
 .nav {
-    margin: 10px 0 20px 0;
+    margin: 20px 0 40px 0;
 }
 
 .nav-list {
@@ -172,27 +173,86 @@ a:focus {
     justify-content: space-between;
 }
 
-.nav-list > li {
-
-}
-
 .nav-list a {
     padding: 5px 0;
+    border-bottom: 2px solid transparent; /* reserve the space for the hover border */
     display: inline-block;
-    color: #f1b9ae;
+    color: #f9b7a9;
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     font-size: 14px;
-    font-weight: 100;
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 4px;
+}
+
+.nav-list a:hover,
+.nav-list a:focus,
+.nav-list li.current-menu-item a,
+.nav-list li.current-menu-parent a,
+.nav-list li.current_page_item a,
+.nav-list li.current_page_parent a,
+.nav-list li.current_page_ancestor a {
+    border-bottom-color: #f9b7a9; /* matches text color */
+}
+
+/* ---------------------------------------------------------------------
+ Main Content Area
+------------------------------------------------------------------------ */
+.content {
+    margin-bottom: 40px;
 }
 
 /* ---------------------------------------------------------------------
  Footer
 ------------------------------------------------------------------------ */
 .footer {
-    display: none; /* temp */
+    padding: 30px 0;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    color: #999999;
+    text-align: center;
+}
+
+.footer a {
+    color: #999999;
+    text-decoration: none;
+}
+
+.footer a:hover,
+.footer a:focus {
+    color: #777777;
+    text-decoration: none;
+}
+
+.footer-nav {
+    margin-bottom: 25px;
+}
+
+.footer-legal-lines {
+    display: block;
+}
+
+.footer-legal-lines-line {
+    display: block;
+}
+
+.footer-legal-lines-line-seperator {
+    display: none;
+}
+
+@media (min-width: 600px) {
+    .footer {
+        padding: 40px 0;
+    }
+
+    .footer-legal-lines-line {
+        display: inline;
+    }
+
+    .footer-legal-lines-line-seperator {
+        display: inline;
+    }
 }
 
 /* ---------------------------------------------------------------------
@@ -201,17 +261,22 @@ a:focus {
 .tier {
     overflow: hidden; /* clear anything in a tier and prevent overflow */
     min-height: 20px; /* a tier should always be visible */
+    background-color: #ffffff;
 }
 
 .tier_brand {
-    background-color: #f1b9ae;
+    background-color: #f9b7a9;
+}
+
+.tier_transparent {
+    background-color: transparent;
 }
 
 /* ---------------------------------------------------------------------
  Wrapper
 ------------------------------------------------------------------------ */
 .wrapper {
-    max-width: 940px;
+    max-width: 1068px;
     min-width: 200px;
     margin: 0 auto;
     padding: 0 10px;
@@ -245,10 +310,19 @@ a:focus {
         overflow: hidden; /* trigger BFC to prevent wrapping */
     }
 
-    .section-media {
-        max-width: 46%;
+    .section-media_right,
+    .section-media_left {
+        max-width: 42%;
+    }
+
+    .section-media_right {
         float: right;
         margin-left: 40px;
+    }
+
+    .section-media_left {
+        float: left;
+        margin-right: 40px;
     }
 }
 
@@ -268,17 +342,23 @@ a:focus {
 ------------------------------------------------------------------------ */
 .pagination {
     padding: 5px 10px;
-    border: 1px solid #bfbfbf;
-    background-color: #efefef;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
     text-align: center;
 }
 
-/* ---------------------------------------------------------------------
- Slab
------------------------------------------------------------------------- */
-.slab {
-    padding: 20px;
-    background-color: #efefef;
+.pagination a,
+.pagination .page-numbers.current {
+    display: inline-block;
+    padding: 2px 6px;
+    border: 1px solid #999999;
+    text-decoration: none;
+}
+
+.pagination .page-numbers.current {
+    background-color: #f2f2f2;
+    color: #999999;
 }
 
 /* ---------------------------------------------------------------------
@@ -329,90 +409,40 @@ a:focus {
 }
 
 /* ---------------------------------------------------------------------
- Columns
+ Social Navigation
 ------------------------------------------------------------------------ */
-@media (min-width: 740px) {
-    .columns:before,
-    .columns:after {
-        content: " ";
-        display: table;
-    }
-
-    .columns:after {
-        clear: both;
-    }
-
-    .columns {
-        margin-left: -10px;
-    }
-
-    .columns-pillar {
-        float: left;
-        width: calc(50% - 10px);
-        padding-left: 10px;
-    }
+.navSocial {
+    font-size: 0; /* remove space between list items that are inline-block */
 }
 
-@media (min-width: 840px) {
-    .columns {
-        margin-left: -20px;
-    }
-
-    .columns-pillar {
-        width: calc(50% - 20px);
-        padding-left: 20px;
-    }
+.navSocial > li {
+    display: inline-block;
 }
 
-/* ---------------------------------------------------------------------
- Archive
------------------------------------------------------------------------- */
-.archive-hd {
-    margin-bottom: 5px;
-    padding: 5px 10px; /* matches pianoList anchor padding */
+.navSocial > li + li {
+    margin-left: 18px;
 }
 
-.archive-bd {
-    margin-bottom: 25px;
+.navSocial > li.navSocial-item_tight {
+    margin-left: 14px;
 }
 
-@media (min-width: 740px) {
-    .archive-bd {
-        margin-bottom: 0; /* strip bottom margin with columns separate */
-    }
-}
-
-.archive-bd_noPush {
-    margin-bottom: 0;
-}
-
-/* ---------------------------------------------------------------------
- Piano List
------------------------------------------------------------------------- */
-.pianoList {
-    border-bottom: 1px solid #cecac3;
-}
-
-.pianoList > * {
-    border-top: 1px solid #cecac3;
-}
-
-.pianoList > * > a {
+.navSocial > li > a img {
     display: block;
-    padding: 3px 10px; /* matches archive-hd padding */
-    text-decoration: none;
+    height: 32px;
+    width: 32px;
+    opacity: .3;
     /* hover effect - timing matches regular link hovers */
-    -webkit-transition: background-color .12s linear;
-       -moz-transition: background-color .12s linear;
-        -ms-transition: background-color .12s linear;
-         -o-transition: background-color .12s linear;
-            transition: background-color .12s linear;
+    -webkit-transition: opacity .12s linear;
+       -moz-transition: opacity .12s linear;
+        -ms-transition: opacity .12s linear;
+         -o-transition: opacity .12s linear;
+            transition: opacity .12s linear;
 }
 
-.pianoList > * > a:hover,
-.pianoList > * > a:focus {
-    color: #191919; /* NO HOVER COLOR IS WANTED HERE - override the hover set on base anchor */
-    background-color: #cecac3;
+.navSocial > li > a:hover img,
+.navSocial > li > a:focus img {
+    opacity: .6;
 }
 
 /* ---------------------------------------------------------------------
@@ -420,6 +450,7 @@ a:focus {
 ------------------------------------------------------------------------ */
 .hdg {
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
 
 .hdg_lg {

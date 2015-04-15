@@ -9,8 +9,10 @@
 
 <div class="tier">
     <div class="wrapper">
-        <div class="userContent">
-            <?php the_field('text_snippet_error_message', 'option'); ?>
+        <div class="content" role="main">
+            <div class="userContent">
+                <?php the_field('text_snippet_error_message', 'option'); ?>
+            </div>
         </div>
     </div>
 </div>
