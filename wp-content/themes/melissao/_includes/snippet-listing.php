@@ -59,7 +59,7 @@
                     $paginate_args = array(
                         'show_all'           => False,
                         'end_size'           => 1,
-                        'mid_size'           => 3,
+                        'mid_size'           => 2,
                         'prev_next'          => True,
                         'prev_text'          => __('&laquo; Previous'),
                         'next_text'          => __('Next &raquo;'),
