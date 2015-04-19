@@ -48,6 +48,14 @@ if (function_exists('acf_add_options_page')) {
     acf_add_options_page();
 }
 
+add_filter('upload_mimes', 'custom_upload_mimes');
+function custom_upload_mimes ($existing_mimes=array()) {
+	// add the file extension to the array
+	$existing_mimes['svg'] = 'mime/type';
+    // call the modified list of extensions
+	return $existing_mimes;
+}
+
 /* ====================================================================================================
  Custom Post Type - Galleries
 ==================================================================================================== */
@@ -79,3 +87,42 @@ function create_post_type_galleries() {
         )
     );
 }
+
+/* ====================================================================================================
+ Custom Functions
+==================================================================================================== */
+/**
+ * include aq_resizer for on the fly image adjustments
+ */
+require_once('aq_resizer.php');
+
+/**
+ * Find the first image in a post.
+ *
+ * @return image URL
+ */
+function the_first_image() {
+    global $post, $posts;
+    $first_img = '';
+    ob_start();
+    ob_end_clean();
+    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+    $first_img = $matches [1] [0];
+    return $first_img;
+}
+
+/**
+ * modify the_excerpt appended text
+ */
+ function new_excerpt_more($more) {
+	return ' &hellip; <a class="read-more" href="'. get_permalink(get_the_ID()) . '">Read More</a>';
+}
+add_filter( 'excerpt_more', 'new_excerpt_more' );
+
+/**
+ * modify the_excerpt length
+ */
+function custom_excerpt_length($length) {
+	return 80;
+}
+add_filter('excerpt_length', 'custom_excerpt_length', 999);
