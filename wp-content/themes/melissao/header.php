@@ -15,6 +15,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
+        <!-- ICONS -->
+        <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png?v=oho">
+        <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png?v=oho">
+        <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png?v=oho">
+        <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png?v=oho">
+        <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png?v=oho">
+        <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png?v=oho">
+        <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png?v=oho">
+        <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png?v=oho">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png?v=oho">
+        <link rel="icon" type="image/png" href="/favicon-32x32.png?v=oho" sizes="32x32">
+        <link rel="icon" type="image/png" href="/android-chrome-192x192.png?v=oho" sizes="192x192">
+        <link rel="icon" type="image/png" href="/favicon-96x96.png?v=oho" sizes="96x96">
+        <link rel="icon" type="image/png" href="/favicon-16x16.png?v=oho" sizes="16x16">
+        <link rel="manifest" href="/manifest.json?v=oho">
+        <link rel="shortcut icon" href="/favicon.ico?v=oho">
+        <meta name="msapplication-TileColor" content="#ffdfb6">
+        <meta name="msapplication-TileImage" content="/mstile-144x144.png?v=oho">
+
         <!-- WP HEAD GENERATED -->
         <?php wp_head(); ?>
     </head>
@@ -24,12 +43,8 @@
             <div class="wrapper">
                 <div class="masthead" role="banner">
                     <div class="masthead-logo">
-                        <a href="<?php echo site_url(); ?>">
-                            <?php if(get_field('branding_logo', 'option')): ?>
-                            <img src="<?php the_field('branding_logo', 'option'); ?>" alt="<?php bloginfo('name'); ?>" />
-                            <?php else: ?>
-                                <? bloginfo('name'); ?>
-                            <?php endif; ?>
+                        <a class="logo" href="<?php echo site_url(); ?>">
+                            <span class="logo-text"><? bloginfo('name'); ?></span>
                         </a>
                     </div>
                     <div class="masthead-tagline">
