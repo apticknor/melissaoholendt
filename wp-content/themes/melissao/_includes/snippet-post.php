@@ -10,22 +10,32 @@
 <div class="tier">
     <div class="wrapper">
         <div class="content" role="main">
-        <?php if (have_posts()) while (have_posts()) : the_post(); ?>
-            <?php the_title(); ?>
-            Posted on <?php the_date(); ?> by <?php the_author_posts_link(); ?>
-            <?php if (has_post_thumbnail()) { ?>
-        	    <?php the_post_thumbnail(); ?>
-            <?php } ?>
-            <div class="userContent">
-                <?php the_content(); ?>
+            <div class="grid">
+                <div class="grid-col grid-col_main">
+                    <?php if (have_posts()) while (have_posts()) : the_post(); ?>
+                    <div class="post">
+                        <div class="post-hd">
+                            <h1 class="hdg hdg_md">
+                                <?php the_title(); ?>
+                            </h1>
+                        </div>
+                        <div class="post-meta">
+                            <div class="hdg hdg_xs mix-hdg_kerningNarrow">
+                                <?php the_date(); ?>
+                            </div>
+                        </div>
+                        <div class="post-bd">
+                            <div class="userContent">
+                                <?php the_content(); ?>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endwhile; ?>
+                </div>
+                <div class="grid-col grid-col_sub">
+                    <?php get_template_part('_includes/shared', 'widgets'); ?>
+                </div>
             </div>
-            <?php if ((has_category())) { ?>
-                Filed Under: <?php the_category(', '); ?>
-            <?php } ?>
-            <?php if ( (has_tag()) ) { ?>
-                Tagged with: <?php the_tags('',', ',''); ?>
-            <?php } ?>
-        <?php endwhile; ?>
         </div>
     </div>
 </div>
