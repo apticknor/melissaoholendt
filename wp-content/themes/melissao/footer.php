@@ -48,12 +48,12 @@
                                 &copy; 2010 - <?php echo date('Y'); ?>
                             </span>
                             <span class="footer-legal-lines-line">
-                                <? bloginfo('name'); ?>
+                                <?php bloginfo('name'); ?>
                             </span>
                         </span>
                         <span class="footer-legal-lines">
                             <span class="footer-legal-lines-line">
-                                Weddings &amp; Lifestyle
+                                <?php bloginfo('description'); ?>
                             </span>
                             <span class="footer-legal-lines-line">
                                 <span class="footer-legal-lines-line-seperator">&bull;</span> Minneapolis &amp; Worldwide

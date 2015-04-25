@@ -47,7 +47,10 @@
                         </a>
                     </div>
                     <div class="masthead-tagline">
-                        Weddings & Lifestyle
+                        <?php bloginfo('description'); ?>
+                    </div>
+                    <div class="masthead-nav" id="js-navToggleTrigger">
+                        Menu
                     </div>
                 </div>
             </div>
@@ -56,7 +59,7 @@
         <div class="tier">
             <div class="wrapper">
                 <div class="nav" role="navigation">
-                    <ul class="nav-list">
+                    <ul class="nav-list" id="js-navToggleTarget">
                     <?php
                         $navPrimaryArgs = array(
                             'theme_location'  => '',

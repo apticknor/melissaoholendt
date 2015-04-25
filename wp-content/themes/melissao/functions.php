@@ -13,6 +13,9 @@ remove_theme_support('custom-background');
 remove_theme_support('custom-header');
 remove_theme_support('html5');
 
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');
+
 /* ====================================================================================================
  Enqueue Scripts and Styles
 ==================================================================================================== */
@@ -148,15 +151,8 @@ function commentStart($comment, $args, $depth) {
                 <?php } ?>
                 <div class="comment-media-content">
                     <div class="comment-media-content-hd">
-                        <h2 class="hdg hdg_xxs mix-hdg_kerningNarrow">
-                        <?php if($comment->comment_author_url != "") { ?>
-                            <a href="<?php comment_author_url(); ?>">
-                        <?php } ?>
-                            <?php printf(__('%s'), get_comment_author()); ?>
-                        <?php if($comment->comment_author_url != "") { ?>
-                            </a>
-                        <?php } ?>
-                        </h2>
+
+
                     </div>
                     <div class="comment-media-content-meta">
                         <?php printf( __('%s'), get_comment_date('F d Y')); ?>
@@ -189,7 +185,7 @@ function commentsStart($comment, $args, $depth) {
                 <?php } ?>
                 <div class="comment-media-content">
                     <div class="comment-media-content-hd">
-                        <h2 class="hdg hdg_xxs mix-hdg_kerningNarrow">
+                        <h2 class="hdg hdg_xs">
                         <?php if($comment->comment_author_url != "") { ?>
                             <a href="<?php comment_author_url(); ?>">
                         <?php } ?>

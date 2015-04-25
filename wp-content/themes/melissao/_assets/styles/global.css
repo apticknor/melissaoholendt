@@ -151,56 +151,128 @@ a:focus {
 ------------------------------------------------------------------------ */
 .masthead {
     position: relative;
-    padding: 30px 0;
-}
-
-.masthead-logo {
-    text-align: center;
+    padding: 15px 0;
 }
 
 .masthead-tagline {
     display: none;
 }
 
+.masthead-nav {
+    position: absolute;
+    top: calc(50% - 13px); /* halfway minus some of the height */
+    right: 0;
+    height: 24px; /* height of the logo mark */
+    padding: 0 10px;
+    border: 1px solid #ffffff;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffffff;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+}
+
+@media (min-width: 740px) {
+    .masthead {
+        padding: 30px 0;
+    }
+
+    .masthead-tagline {
+        position: absolute;
+        top: 80px; /* eyeball vertical center */
+        left: 340px; /* eyeballl horizontal center with remaining space */
+        right: 0;
+        display: block;
+        text-align: center;
+        font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.2;
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        color: #ffffff;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .masthead-nav {
+        display: none;
+    }
+}
+
 /* ---------------------------------------------------------------------
  Navigation
 ------------------------------------------------------------------------ */
 .nav {
-    margin: 25px 0 40px 0;
+    margin-bottom: 20px;
 }
 
 .nav-list {
-    -ms-box-orient: horizontal;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -moz-flex;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-justify-content: space-between;
-    justify-content: space-between;
+    height: 0;
+    overflow: hidden;
+}
+
+.nav-list_isExpanded {
+    height: auto;
 }
 
 .nav-list a {
-    padding: 5px 0;
-    border-bottom: 2px solid transparent; /* reserve the space for the hover border */
-    display: inline-block;
     color: #fab7a9;
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     font-size: 14px;
     text-transform: uppercase;
     text-decoration: none;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
 }
 
-.nav-list a:hover,
-.nav-list a:focus,
-.nav-list li.current-menu-item a,
-.nav-list li.current-menu-parent a,
-.nav-list li.current_page_item a,
-.nav-list li.current_page_parent a,
-.nav-list li.current_page_ancestor a {
-    border-bottom-color: #fab7a9; /* matches text color */
+.nav-list a {
+    display: block;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+@media (min-width: 740px) {
+    .nav {
+        margin: 25px 0 40px 0;
+    }
+
+    .nav-list {
+        height: auto; /* reset small screen view */
+        padding: 0; /* reset small screen view */
+        border-bottom: 0; /* reset small screen view */
+        -ms-box-orient: horizontal;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -moz-flex;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+    }
+
+    .nav-list a {
+        padding: 5px 0;
+        border-bottom: 2px solid transparent; /* reserve the space for the hover border */
+        display: inline-block;
+    }
+
+    .nav-list a:hover,
+    .nav-list a:focus,
+    .nav-list li.current-menu-item a,
+    .nav-list li.current-menu-parent a,
+    .nav-list li.current_page_item a,
+    .nav-list li.current_page_parent a,
+    .nav-list li.current_page_ancestor a {
+        border-bottom-color: #fab7a9; /* matches text color */
+    }
+}
+
+@media (min-width: 880px) {
+    .nav-list a {
+        letter-spacing: 4px;
+    }
 }
 
 /* ---------------------------------------------------------------------
@@ -383,10 +455,10 @@ a:focus {
 ------------------------------------------------------------------------ */
 .logo {
     display: block;
-    width: 300px;
-    height: 124px;
-    background-size: 300px;
-    background-image: url("../media/images/logo.svg");
+    width: 80px;
+    height: 24px;
+    background-size: 80px;
+    background-image: url("../media/images/mark.svg");
     background-repeat: no-repeat;
 }
 
@@ -396,6 +468,15 @@ a:focus {
     font: 0/0 a;
     text-shadow: none;
     color: transparent;
+}
+
+@media (min-width: 740px) {
+    .logo {
+        width: 300px;
+        height: 124px;
+        background-size: 300px;
+        background-image: url("../media/images/logo.svg");
+    }
 }
 
 /* ---------------------------------------------------------------------
@@ -564,7 +645,7 @@ a:focus {
 
 .comment-media {
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
 }
@@ -584,6 +665,7 @@ a:focus {
 
 .comment-media-content-meta {
     margin-bottom: 15px;
+    font-size: 14px;
 }
 
 .comment-media-content-bd > *:not(:last-child) {
@@ -829,7 +911,7 @@ a:focus {
     color: inherit;
     background-color: #ffffff;
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.2;
     letter-spacing: 1px;
     vertical-align: middle;
