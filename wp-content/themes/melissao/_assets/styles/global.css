@@ -90,14 +90,14 @@ input[type="search"]::-webkit-search-results-decoration {
 input[type="search"] {
     -webkit-appearance: none;
     -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
+       -moz-box-sizing: content-box;
+            box-sizing: content-box;
 }
 
 textarea {
     overflow: auto;
     vertical-align: top;
-    resize: vertical;
+    resize: none;
 }
 
 ::-moz-focus-inner {
@@ -208,6 +208,10 @@ a:focus {
 ------------------------------------------------------------------------ */
 .content {
     margin-bottom: 40px;
+}
+
+.content_isCentered{
+    text-align: center;
 }
 
 /* ---------------------------------------------------------------------
@@ -446,15 +450,34 @@ a:focus {
     .pagination {
         left: 120px; /* faux recenter below two columns */
     }
+
+    .pagination_isNaturallyCentered {
+        left: 0;
+    }
 }
 
 @media (min-width: 1000px) {
     .pagination {
         left: 150px; /* faux recenter below two columns */
     }
+
+    .pagination_isNaturallyCentered {
+        left: 0;
+    }
 }
 
+/* ---------------------------------------------------------------------
+ Site Error
+------------------------------------------------------------------------ */
+@media (min-width: 800px) {
+    .siteError {
+        padding: 20px 0;
+    }
+}
 
+.siteError-msg {
+    margin-bottom: 20px;
+}
 
 /* ---------------------------------------------------------------------
  Listing
@@ -496,6 +519,124 @@ a:focus {
     margin-bottom: 20px;
 }
 
+.post-ft {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 2px solid rgba(0,0,0,.1);
+}
+
+/* ---------------------------------------------------------------------
+ Discusssion
+------------------------------------------------------------------------ */
+.discussion-hd {
+    margin-bottom: 30px;
+}
+
+.discussion-list {
+    margin-bottom: 20px;
+}
+
+@media (min-width: 540px) {
+    .discussion-form {
+        padding-left: 70px; /* width of the avatar (50px) and the space between the comment avatar and comment bubble (20px) */
+    }
+}
+
+/* ---------------------------------------------------------------------
+ Comments List
+------------------------------------------------------------------------ */
+.commentsList > *:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+/* ---------------------------------------------------------------------
+ Comment
+------------------------------------------------------------------------ */
+.comment-media:before,
+.comment-media:after {
+    content: " ";
+    display: table;
+}
+
+.comment-media:after {
+    clear: both;
+}
+
+.comment-media {
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.comment-media-img {
+    display: none;
+}
+
+.comment-media-content {
+    padding: 15px 20px;
+    background-color: #f2f2f2;
+}
+
+.comment-media-content-hd {
+    margin-bottom: 5px;
+}
+
+.comment-media-content-meta {
+    margin-bottom: 15px;
+}
+
+.comment-media-content-bd > *:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+/* wordpress specific hook and class can't be changed - sandboxed with custom ID */
+#commentForm .form-submit {
+    margin-top: 10px;
+    text-align: right;
+}
+
+@media (min-width: 540px) {
+    .comment-media-img {
+        display: block; /* show this after hiding it on mobile */
+        float: left;
+        margin-right: 20px;
+    }
+
+    .comment-media-content {
+        float: left;
+        width: calc(100% - 110px);
+        position: relative; /* context for pseudo element to creat stub */
+    }
+
+    .comment-media-content:before {
+        content: " ";
+        position: absolute;
+        top: 17px;
+        left: -10px;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-right: 10px solid #f2f2f2;
+        z-index: 99999;
+    }
+}
+
+/* ---------------------------------------------------------------------
+ Media
+------------------------------------------------------------------------ */
+.media {
+    overflow: hidden; /* clearfix */
+}
+
+.media-img {
+    float: left;
+    margin-right: 20px;
+}
+
+.media-bd {
+    overflow: hidden; /* bfc */
+}
+
 /* ---------------------------------------------------------------------
  Vertical List
 ------------------------------------------------------------------------ */
@@ -508,6 +649,13 @@ a:focus {
 /* ---------------------------------------------------------------------
  Widgets
 ------------------------------------------------------------------------ */
+.widgets-hd {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 2px solid rgba(0,0,0,.1);
+    margin-bottom: 30px;
+}
+
 .widgets-item {
     margin-bottom: 20px;
     padding: 20px;
@@ -550,6 +698,10 @@ a:focus {
         margin-left: -20px;
     }
 
+    .widgets-hd {
+        margin-left: 20px;
+    }
+
     .widgets-item {
         float: left;
         width: calc(50% - 20px);
@@ -557,6 +709,24 @@ a:focus {
         -webkit-box-sizing: border-box;
            -moz-box-sizing: border-box;
                 box-sizing: border-box;
+    }
+}
+
+@media (min-width: 840px) {
+    /* when the grid is applied */
+
+    .widgets-hd {
+        /* reset smaller size */
+        margin: 0;
+        padding: 0;
+        border: 0;
+        /* isVisuallyHidden at this size */
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        position: absolute;
+        width: 1px;
     }
 }
 
@@ -648,6 +818,84 @@ a:focus {
 }
 
 /* ---------------------------------------------------------------------
+ Form Fields
+------------------------------------------------------------------------ */
+.field {
+    display: inline-block;
+    width: 100%;
+    height: 35px;
+    padding: 5px 10px;
+    border: 1px solid #cccccc;
+    color: inherit;
+    background-color: #ffffff;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    vertical-align: middle;
+    border-radius: 2px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+       -moz-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.field_txtMultiLine {
+    height: 130px;
+    padding: 10px 15px;
+    line-height: 1.4
+}
+
+.field_sizeMd {
+    width: 60%;
+    max-width: 460px;
+}
+
+/* ---------------------------------------------------------------------
+ Button
+------------------------------------------------------------------------ */
+.btn {
+    display: inline-block;
+    width: auto;
+    height: 35px;
+    padding: 5px 10px;
+    border: 1px solid #fab7a9;
+    color: #ffffff;
+    background-color: #fab7a9;
+    background-image: none;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: visible;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 2px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-appearance: button;
+    /* hover effect */
+    -webkit-transition: background-color .12s linear;
+       -moz-transition: background-color .12s linear;
+        -ms-transition: background-color .12s linear;
+         -o-transition: background-color .12s linear;
+            transition: background-color .12s linear;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: #f9c6b7;
+}
+
+/* ---------------------------------------------------------------------
  User Content
 ------------------------------------------------------------------------ */
 .userContent {
@@ -688,24 +936,49 @@ a:focus {
 
 .userContent h1 {
     font-size: 32px;
-    line-height: 42px;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    line-height: 1.25;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    -webkit-font-smoothing: antialiased;
+
 }
 
 .userContent h2 {
     font-size: 24px;
-    line-height: 36px;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    line-height: 1.25;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    -webkit-font-smoothing: antialiased;
 }
 
 .userContent h3 {
     font-size: 18px;
-    line-height: 24px;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    line-height: 1.25;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    -webkit-font-smoothing: antialiased;
 }
 
-.userContent h4,
+.userContent h4 {
+    font-size: 16px;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    line-height: 1.25;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    -webkit-font-smoothing: antialiased;
+}
+
 .userContent h5,
 .userContent h6 {
     font-size: 14px;
-    line-height: 18px;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    line-height: 1.25;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    -webkit-font-smoothing: antialiased;
 }
 
 .userContent h1,
@@ -781,7 +1054,7 @@ a:focus {
 
 .userContent abbr,
 .userContent acronym {
-    border-bottom: dotted 1px;
+    border-bottom: 1px dotted;
 }
 
 .userContent cite,
@@ -889,6 +1162,7 @@ a:focus {
 }
 
 /* .userContent Wordpress styles from core -> http://codex.wordpress.org/CSS */
+/* TODO */
 .userContent .alignnone {
     margin: 5px 20px 20px 0;
 }

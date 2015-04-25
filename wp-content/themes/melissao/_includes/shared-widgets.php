@@ -8,7 +8,9 @@
 ?>
 
 <div class="widgets">
-    <h1 class="isVisuallyHidden">Blog Post Groups</h1>
+    <div class="widgets-hd">
+        <h1 class="hdg hd_xs">Blog Archive</h1>
+    </div>
     <div class="widgets-item">
         <div class="widgets-item-hd">
             <h2 class="hdg hdg_xs mix-hdg_kerningWide">Categories</h2>

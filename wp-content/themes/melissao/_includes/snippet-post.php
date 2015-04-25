@@ -29,6 +29,9 @@
                                 <?php the_content(); ?>
                             </div>
                         </div>
+                        <div class="post-ft">
+                            <?php comments_template(); ?>
+                        </div>
                     </div>
                     <?php endwhile; ?>
                 </div>

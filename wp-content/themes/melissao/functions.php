@@ -20,7 +20,10 @@ function melissao_scripts() {
 
     wp_enqueue_style(
         'melissao-style',
-        get_template_directory_uri() . '/_assets/styles/global.css'
+        get_template_directory_uri() . '/_assets/styles/global.css',
+        array(),
+        false,
+        'all and (min-width: 1em)'
     );
 
     wp_enqueue_script(
@@ -126,3 +129,94 @@ function custom_excerpt_length($length) {
 	return 80;
 }
 add_filter('excerpt_length', 'custom_excerpt_length', 999);
+
+/**
+ * Outputs Comments Markup Start
+ *
+ * @return html
+ */
+function commentStart($comment, $args, $depth) {
+    $GLOBALS['comment'] = $comment;
+?>
+    <li>
+        <div class="comment">
+            <div class="comment-media">
+                <?php if ($args['avatar_size'] != 0) { ?>
+                <div class="comment-media-img">
+                    <?php echo get_avatar( $comment, $args['avatar_size'] ); ?>
+                </div>
+                <?php } ?>
+                <div class="comment-media-content">
+                    <div class="comment-media-content-hd">
+                        <h2 class="hdg hdg_xxs mix-hdg_kerningNarrow">
+                        <?php if($comment->comment_author_url != "") { ?>
+                            <a href="<?php comment_author_url(); ?>">
+                        <?php } ?>
+                            <?php printf(__('%s'), get_comment_author()); ?>
+                        <?php if($comment->comment_author_url != "") { ?>
+                            </a>
+                        <?php } ?>
+                        </h2>
+                    </div>
+                    <div class="comment-media-content-meta">
+                        <?php printf( __('%s'), get_comment_date('F d Y')); ?>
+                    </div>
+                    <div class="comment-media-content-bd">
+                        <?php comment_text(); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+<?php
+}
+
+/**
+ * Outputs Comments Markup Start
+ *
+ * @return html
+ */
+function commentsStart($comment, $args, $depth) {
+    $GLOBALS['comment'] = $comment;
+?>
+    <li>
+        <div class="comment">
+            <div class="comment-media">
+                <?php if ($args['avatar_size'] != 0) { ?>
+                <div class="comment-media-img">
+                    <?php echo get_avatar( $comment, $args['avatar_size'] ); ?>
+                </div>
+                <?php } ?>
+                <div class="comment-media-content">
+                    <div class="comment-media-content-hd">
+                        <h2 class="hdg hdg_xxs mix-hdg_kerningNarrow">
+                        <?php if($comment->comment_author_url != "") { ?>
+                            <a href="<?php comment_author_url(); ?>">
+                        <?php } ?>
+                            <?php printf(__('%s'), get_comment_author()); ?>
+                        <?php if($comment->comment_author_url != "") { ?>
+                            </a>
+                        <?php } ?>
+                        </h2>
+                    </div>
+                    <div class="comment-media-content-meta">
+                        <?php printf( __('%s'), get_comment_date('F d Y')); ?>
+                    </div>
+                    <div class="comment-media-content-bd">
+                        <?php comment_text(); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php // end of comments list items closed by end-callback -> commentsEnd() ?>
+<?php
+}
+
+/**
+ * Outputs Comments Markup End
+ *
+ * @return html
+ */
+function commentsEnd() {
+    echo '</li>';
+}

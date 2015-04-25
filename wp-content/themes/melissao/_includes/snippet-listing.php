@@ -19,7 +19,6 @@
                                 <?php if (is_home()) { echo "Blog Archive"; } ?>
                                 <?php if (is_tag()) { echo "Blog Posts tagged with " . single_tag_title('', false); } ?>
                                 <?php if (is_category()) { echo "Blog Posts filed under " . single_cat_title('', false); } ?>
-                                <?php if (is_search()) { echo "Search Results"; } ?>
                                 <?php if (is_author()) { echo get_the_author(); } ?>
                                 <?php if (is_date()) {
                                     if (is_day()) { $archiveDate = get_the_date('F jS Y'); }
@@ -70,7 +69,9 @@
                         </div>
                     <?php endif; ?>
                         <div class="listing-nav">
-                            <?php get_template_part('_includes/shared', 'pagination'); ?>
+                            <div class="pagination">
+                                <?php get_template_part('_includes/shared', 'pagination'); ?>
+                            </div>
                         </div>
                     </div>
                 </div>

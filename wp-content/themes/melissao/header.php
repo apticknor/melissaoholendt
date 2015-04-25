@@ -6,7 +6,6 @@
  * @author Anthony Ticknor <tony.ticknor@gmail.com>
  */
 ?>
-
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
     <head>
