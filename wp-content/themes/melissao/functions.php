@@ -89,7 +89,7 @@ function create_post_type_galleries() {
             'rewrite' => array(
                 'slug' => 'galleries'
             ),
-            'supports' => array( 'title', 'editor', 'author', 'thumbnail')
+            'supports' => array( 'title', 'author', 'thumbnail')
         )
     );
 }
