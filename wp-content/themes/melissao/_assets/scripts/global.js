@@ -15,6 +15,7 @@ var MELISSAO = MELISSAO || {};
 
         APP.HasJS.init();
         APP.NavToggler.init();
+        APP.PaneScroller.init();
     });
 
     /* ---------------------------------------------------------------------
@@ -76,6 +77,51 @@ var MELISSAO = MELISSAO || {};
                 console.log('2');
                 this.$navToggleTarget.addClass(this.navToggleExpandedClass);
             }
+        }
+    };
+
+    /* ---------------------------------------------------------------------
+    PaneScroller
+
+    @TODO
+    ------------------------------------------------------------------------ */
+    APP.PaneScroller = {
+        pageScrollerSelector: "#js-paneScroller",
+        pageScrollerStageSelector: "#js-paneScrollerStage",
+        $pageScroller: null,
+        $pageScrollerStage: null,
+        gutterWidth: 10,
+        stageWidth: 0,
+
+        init: function() {
+            var $pageScroller = $(this.pageScrollerSelector);
+            var $pageScrollerStage = $(this.pageScrollerStageSelector);
+
+            if (!$pageScroller.length || !$pageScrollerStage.length ) {
+                return;
+            }
+
+            this.$pageScroller = $pageScroller;
+            this.$pageScrollerStage = $pageScrollerStage;
+
+            this.calculateScrollerSize();
+        },
+
+        calculateScrollerSize: function() {
+            var self = this;
+            var images = this.$pageScroller.find('img');
+            var totalImages = images.length;
+            var totalGutterWidth = (totalImages - 1) * this.gutterWidth;
+
+            images.each(function(i) {
+                var $this = $(this);
+                var imgWidth = $this.attr("data-imgWidth");
+                self.stageWidth = self.stageWidth + parseInt(imgWidth);
+            });
+
+            self.stageWidth = self.stageWidth + totalGutterWidth;
+
+            this.$pageScrollerStage.width(self.stageWidth);
         }
     };
 

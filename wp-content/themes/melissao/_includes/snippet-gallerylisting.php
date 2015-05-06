@@ -17,8 +17,8 @@
                 <div class="listing-hd">
                     <h1 class="isVisuallyHidden">Galleries</h1>
                 </div>
-                <div class="listing-bd">
-                    <?php if (have_posts()): ?>
+                <?php if (have_posts()): ?>
+                    <div class="listing-bd">
                         <ul class="gallery">
                         <?php rewind_posts(); while (have_posts()) : the_post(); ?>
                             <li>
@@ -48,23 +48,15 @@
                             </li>
                         <?php endwhile; ?>
                         </ul>
-                    <?php endif; ?>
-                </div>
+                    </div>
+                <?php else: ?>
+                    <div class="listing-bd">
+                        <div class="userContent">
+                            <?php the_field('text_snippet_error_message', 'option'); ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>
 </div>
-
-<!--
-<?php if ($images) : ?>
-    <ul class="tiles">
-    <?php foreach ($images as $image) : ?>
-        <li>
-            <a href="#">
-                <img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" />
-            </a>
-        </li>
-    <?php endforeach; ?>
-    </ul>
-<?php endif;?>
--->

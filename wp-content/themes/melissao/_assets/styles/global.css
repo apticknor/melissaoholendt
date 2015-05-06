@@ -58,7 +58,6 @@ html {
 
 img, audio, canvas, video, picture, iframe, embed {
     max-width: 100% !important; /* media should never overflow it's container */
-    height: auto !important;
 }
 
 /* ---------------------------------------------------------------------
@@ -80,6 +79,13 @@ template {
 /* ---------------------------------------------------------------------
  Form Reset Styles
 ------------------------------------------------------------------------ */
+button,
+input[type=button],
+input[type=reset],
+input[type=submit] {
+    -webkit-appearance: button;
+}
+
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-results-button,
@@ -603,14 +609,43 @@ a:focus {
     margin-bottom: 10px;
 }
 
+.post-hd_galleryPane {
+    margin-bottom: 0;
+    text-align: center;
+}
+
 .post-meta {
     margin-bottom: 20px;
+}
+
+.post-meta_galleryPane {
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .post-ft {
     margin-top: 30px;
     padding-top: 25px;
     border-top: 2px solid rgba(0,0,0,.1);
+}
+
+.post-cta {
+    margin-top: 40px;
+    text-align: center;
+}
+
+@media (min-width: 740px) {
+    .post-hd_galleryPane {
+        margin-bottom: 0;
+        text-align: left;
+        padding-left: 20px; /* mimic the wrapper inset spacing */
+    }
+
+    .post-meta_galleryPane {
+        text-align: left;
+        margin-bottom: 20px;
+        padding-left: 20px; /* mimic the wrapper inset spacing */
+    }
 }
 
 /* ---------------------------------------------------------------------
@@ -879,6 +914,64 @@ a:focus {
 }
 
 /* ---------------------------------------------------------------------
+ Pane
+------------------------------------------------------------------------ */
+.pane-stage-imageList {
+    font-size: 0; /* remove space between elements */
+}
+
+.pane-stage-imageList > * {
+    display: inline-block;
+    vertical-align: top;
+}
+
+@media (min-width: 700px) {
+    .pane {
+        min-height: 450px;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .pane-stage {
+        /* width is calculated by PHP and applied inline */
+        margin-bottom: 10px; /* insert some space before the scrollbar */
+    }
+
+    .pane-stage-imageList > * + * {
+        padding-left: 10px; /* space between elements */
+    }
+
+    .pane-stage-imageList > * > img {
+        display: block;
+    }
+}
+
+@media (max-width: 699px) {
+    /* using max-width so important is removed properly */
+    .pane {
+        padding: 10px; /* mimic the wrapper inset spacing */
+    }
+
+    .pane-stage {
+        width: auto !important; /* override javascript inline style */
+        margin: -10px 0 0 -10px;
+    }
+
+    .pane-stage-imageList > * {
+        width: 100%;
+        padding: 10px 0 0 10px;
+        text-align: center;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    }
+
+    .pane-stage-imageList > * > img {
+        height: auto;
+    }
+}
+
+/* ---------------------------------------------------------------------
  Link List
 ------------------------------------------------------------------------ */
 .linkList > * {
@@ -1021,10 +1114,11 @@ a:focus {
     background-image: none;
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     font-size: 14px;
-    line-height: 1.2;
+    line-height: 1.8; /* match body */
     letter-spacing: 1px;
     text-align: center;
     text-transform: uppercase;
+    text-decoration: none;
     white-space: nowrap;
     overflow: visible;
     vertical-align: middle;
@@ -1034,7 +1128,6 @@ a:focus {
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
-    -webkit-appearance: button;
     /* hover effect */
     -webkit-transition: background-color .12s linear;
        -moz-transition: background-color .12s linear;
@@ -1046,6 +1139,7 @@ a:focus {
 .btn:hover,
 .btn:focus {
     background-color: #f9c6b7;
+    color: #ffffff; /* repeat to achieve enough specificity to win over links */
 }
 
 /* ---------------------------------------------------------------------
