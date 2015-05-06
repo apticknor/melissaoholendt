@@ -933,7 +933,7 @@ a:focus {
     }
 
     .pane-stage {
-        /* width is calculated by PHP and applied inline */
+        width: 50000px; /* actual width is calculated by JS and applied inline - this just holds space for non -js*/
         margin-bottom: 10px; /* insert some space before the scrollbar */
     }
 
