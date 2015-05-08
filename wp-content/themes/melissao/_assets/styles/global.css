@@ -264,13 +264,15 @@ a:focus {
         display: inline-block;
     }
 
+    /* All of this nonsense is because of how wordpress applies classes to the nav.
+       As such I resorted to body classes to keep nav items highlighted when on children of a parent section. */
     .nav-list a:hover,
     .nav-list a:focus,
     .nav-list li.current-menu-item a,
     .nav-list li.current-menu-parent a,
-    .nav-list li.current_page_item a,
-    .nav-list li.current_page_parent a,
-    .nav-list li.current_page_ancestor a {
+    .archive:not(.post-type-archive-melissao_galleries) .nav-list li.menu-item-10866 a,
+    .single.single-post .nav-list li.menu-item-10866 a,
+    .single.single-melissao_galleries .nav-list li.menu-item-10895 a {
         border-bottom-color: #fab7a9; /* matches text color */
     }
 }
@@ -632,6 +634,10 @@ a:focus {
 .post-cta {
     margin-top: 40px;
     text-align: center;
+}
+
+.post-details {
+    margin-top: 40px;
 }
 
 @media (min-width: 740px) {

@@ -24,26 +24,7 @@
                 </span>
             </div>
             <div class="post-bd">
-                <div class="pane" id="js-paneScroller">
-                    <div class="pane-stage" id="js-paneScrollerStage">
-                        <?php if ($images) : ?>
-                            <ul class="pane-stage-imageList">
-                            <?php foreach ($images as $image) : ?>
-                            <?php
-                                $imgSrc             = $image['sizes']['large'];
-                                $baseHeight         = $image['sizes']['large-height'];
-                                $baseWidth          = $image['sizes']['large-width'];
-                                $calculatedHeight   = 450;
-                                $calculatedWidth    = ceil(($calculatedHeight * $baseWidth) / $baseHeight);
-                            ?>
-                                <li>
-                                    <img src="<?php echo $imgSrc; ?>" data-imgWidth="<?php echo $calculatedWidth; ?>" data-imgHeight="<?php echo $calculatedHeight; ?>" alt="<?php echo $image['alt']; ?>" height="<?php echo $calculatedHeight; ?>" />
-                                </li>
-                            <?php endforeach; ?>
-                            </ul>
-                        <?php endif;?>
-                    </div>
-                </div>
+                <?php get_template_part('_includes/shared', 'gallery'); ?>
             </div>
             <div class="post-cta">
                 <a class="btn" href="/galleries/">Back to All Galleries</a>
