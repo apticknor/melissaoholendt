@@ -216,3 +216,10 @@ function commentsStart($comment, $args, $depth) {
 function commentsEnd() {
     echo '</li>';
 }
+
+/**
+ * Disables WPContact Form 7 CSS.
+ *
+ * @return html
+ */
+add_filter( 'wpcf7_load_css', '__return_false' );

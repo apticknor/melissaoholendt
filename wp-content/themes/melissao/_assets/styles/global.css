@@ -152,6 +152,10 @@ a:focus {
     width: 1px;
 }
 
+.isRequired {
+    color: #e63e3e;
+}
+
 /* ---------------------------------------------------------------------
  Masthead
 ------------------------------------------------------------------------ */
@@ -437,6 +441,12 @@ a:focus {
     margin-bottom: 1em;
 }
 
+.section-bd_alt{
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
 @media (min-width: 680px) {
     .section-bd {
         overflow: hidden; /* trigger BFC to prevent wrapping */
@@ -644,13 +654,11 @@ a:focus {
     .post-hd_galleryPane {
         margin-bottom: 0;
         text-align: left;
-        padding-left: 20px; /* mimic the wrapper inset spacing */
     }
 
     .post-meta_galleryPane {
         text-align: left;
         margin-bottom: 20px;
-        padding-left: 20px; /* mimic the wrapper inset spacing */
     }
 }
 
@@ -1070,6 +1078,25 @@ a:focus {
 }
 
 /* ---------------------------------------------------------------------
+ Form
+------------------------------------------------------------------------ */
+.form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-input {
+    margin-bottom: 20px;
+}
+
+/* ---------------------------------------------------------------------
+ Fieldset
+------------------------------------------------------------------------ */
+.fieldset > *:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+/* ---------------------------------------------------------------------
  Form Fields
 ------------------------------------------------------------------------ */
 .field {
@@ -1104,6 +1131,18 @@ a:focus {
 .field_sizeMd {
     width: 60%;
     max-width: 460px;
+}
+
+.field + .field {
+    margin-top: 10px;
+}
+
+/* ---------------------------------------------------------------------
+ Labels
+------------------------------------------------------------------------ */
+.label {
+    display: inline-block;
+    margin-bottom: 2px;
 }
 
 /* ---------------------------------------------------------------------
@@ -1490,4 +1529,62 @@ a:focus {
     line-height: 17px;
     margin: 0;
     padding: 0 4px 5px;
+}
+
+/* ---------------------------------------------------------------------
+ Contact Form 7 - Provided CSS and modified
+------------------------------------------------------------------------ */
+.wpcf7 .screen-reader-response {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.wpcf7-response-output {
+    padding: 10px 20px;
+    margin: 20px 0;
+    text-align: center;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255,255,255,.9);
+}
+
+.wpcf7-mail-sent-ok {
+    border: 2px solid #187911; /* green */
+    color: #187911;
+}
+
+.wpcf7-spam-blocked,
+.wpcf7-mail-sent-ng,
+.wpcf7-validation-errors {
+    border: 2px solid #e63e3e; /* red */
+    color: #e63e3e;
+}
+
+.wpcf7-not-valid-tip {
+    display: block;
+    margin-top: 4px;
+    color: #e63e3e; /* red */
+}
+
+.wpcf7-display-none {
+    display: none;
+}
+
+
+.wpcf7 .placeheld {
+    color: #aaaaaa;
+}
+
+.wpcf7 .ajax-loader {
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 8px;
 }
