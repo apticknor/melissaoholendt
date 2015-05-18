@@ -16,9 +16,9 @@
             <ul class="pane-stage-imageList">
             <?php foreach ($images as $image) : ?>
             <?php
-                $imgSrc             = $image['sizes']['large'];
-                $baseHeight         = $image['sizes']['large-height'];
-                $baseWidth          = $image['sizes']['large-width'];
+                $imgSrc             = $image['sizes']['medium'];
+                $baseHeight         = $image['sizes']['medium-height'];
+                $baseWidth          = $image['sizes']['medium-width'];
                 $calculatedHeight   = 450;
                 $calculatedWidth    = ceil(($calculatedHeight * $baseWidth) / $baseHeight);
             ?>

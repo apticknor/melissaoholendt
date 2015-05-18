@@ -437,6 +437,28 @@ a:focus {
     clear: both;
 }
 
+.section-hd_isMuted,
+.listing-hd_isMuted {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 740px) {
+    .section-hd_isMuted,
+    .listing-hd_isMuted {
+        /* reset smaller size */
+        text-align: left;
+        margin: 0;
+        /* isVisuallyHidden at this size */
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        position: absolute;
+        width: 1px;
+    }
+}
+
 .section-media {
     margin-bottom: 1em;
 }
@@ -445,6 +467,16 @@ a:focus {
     margin-bottom: 40px;
     padding-bottom: 40px;
     border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.section-separator {
+    text-align: center;
+}
+
+.section-separator > svg {
+    width: 60px;
+    height: 60px;
+    margin: 40px 0;
 }
 
 @media (min-width: 680px) {
@@ -581,8 +613,10 @@ a:focus {
 /* ---------------------------------------------------------------------
  Listing
 ------------------------------------------------------------------------ */
-.listing-hd_isVisible {
-    /* listing head is inivisible unless extended */
+/* parts of this object are paired in .section - specifically the head */
+
+.listing-hd_ishighlighted {
+    text-align: left;
     margin-bottom: 40px;
     padding-bottom: 35px;
     border-bottom: 2px solid rgba(0,0,0,.1);
@@ -621,6 +655,17 @@ a:focus {
     margin-bottom: 10px;
 }
 
+.post-hd_isMuted {
+    text-align: center;
+}
+
+@media (min-width: 740px) {
+    .post-hd_isMuted {
+        /* reset */
+        text-align: left;
+    }
+}
+
 .post-hd_galleryPane {
     margin-bottom: 0;
     text-align: center;
@@ -628,6 +673,21 @@ a:focus {
 
 .post-meta {
     margin-bottom: 20px;
+}
+
+.post-meta_isMuted {
+    text-align: center;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    padding-bottom: 20px;
+}
+
+@media (min-width: 740px) {
+    .post-meta_isMuted {
+        /* reset */
+        text-align: left;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
 }
 
 .post-meta_galleryPane {
@@ -773,6 +833,38 @@ a:focus {
 
 .media-bd {
     overflow: hidden; /* bfc */
+}
+
+/* ---------------------------------------------------------------------
+ Note
+------------------------------------------------------------------------ */
+.note-img {
+    text-align: center; /* center images not as wide as the container */
+    margin-bottom: 20px;
+}
+
+@media (min-width: 680px) {
+    .note {
+        overflow: hidden; /* cleafix */
+    }
+
+    .note-img {
+        max-width: 42%;
+        float: left;
+        margin-right: 40px;
+        text-align: left; /* reset */
+        margin-bottom: 0; /* reset */
+    }
+
+    .note-img_flip {
+        float: right;
+        margin-right: 0; /* override */
+        margin-left: 40px;
+    }
+
+    .note-bd {
+        overflow: hidden; /* bfc */
+    }
 }
 
 /* ---------------------------------------------------------------------
@@ -968,12 +1060,17 @@ a:focus {
 
     .pane-stage {
         width: auto !important; /* override javascript inline style */
-        margin: -10px 0 0 -10px;
+        margin: -10px 0 0 0;
+    }
+
+    .pane-stage-imageList {
+        max-width: 398px;
+        margin: 0 auto;
     }
 
     .pane-stage-imageList > * {
         width: 100%;
-        padding: 10px 0 0 10px;
+        padding: 10px 0 0 0;
         text-align: center;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
@@ -1220,6 +1317,17 @@ a:focus {
 .userContent a:hover,
 .userContent a:focus {
 
+}
+
+.userContent img,
+.userContent audio,
+.userContent canvas,
+.userContent video,
+.userContent picture,
+.userContent iframe,
+.userContent embed {
+    max-width: 100% !important; /* media should never overflow it's container */
+    height: auto;
 }
 
 .userContent p {

@@ -14,13 +14,13 @@
                 <div class="grid-col grid-col_main">
                     <?php if (have_posts()) while (have_posts()) : the_post(); ?>
                     <div class="post">
-                        <div class="post-hd">
-                            <h1 class="hdg hdg_md">
+                        <div class="post-hd post-hd_isMuted">
+                            <h1 class="hdg hdg_sm mix-hdg_serif mix-hdg_kerningNarrow">
                                 <?php the_title(); ?>
                             </h1>
                         </div>
-                        <div class="post-meta">
-                            <div class="hdg hdg_xs mix-hdg_kerningNarrow">
+                        <div class="post-meta post-meta_isMuted">
+                            <div class="hdg hdg_xxs">
                                 <?php the_date(); ?>
                             </div>
                         </div>

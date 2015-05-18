@@ -14,8 +14,8 @@
     <div class="wrapper">
         <div class="content" role="main">
             <div class="listing">
-                <div class="listing-hd">
-                    <h1 class="isVisuallyHidden">Galleries</h1>
+                <div class="listing-hd listing-hd_isMuted">
+                    <h1 class="hdg hdg_sm mix-hdg_serif mix-hdg_kerningNarrow">Galleries</h1>
                 </div>
                 <?php if (have_posts()): ?>
                     <div class="listing-bd">

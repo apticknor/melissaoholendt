@@ -11,7 +11,7 @@
     <div class="wrapper">
         <div class="content" role="main">
             <div class="listing">
-                <div class="listing-hd listing-hd_isVisible">
+                <div class="listing-hd listing-hd_ishighlighted">
                     <h1 class="hdg hdg_lg">
                         <?php if (is_search()) { echo "Search Results"; } ?>
                     </h1>

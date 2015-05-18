@@ -14,19 +14,22 @@
                 <div class="grid-col grid-col_main">
                     <div class="listing">
                     <?php if (have_posts()): ?>
-                        <div class="listing-hd">
-                            <h1 class="isVisuallyHidden">
-                                <?php if (is_home()) { echo "Blog Archive"; } ?>
-                                <?php if (is_tag()) { echo "Blog Posts tagged with " . single_tag_title('', false); } ?>
-                                <?php if (is_category()) { echo "Blog Posts filed under " . single_cat_title('', false); } ?>
-                                <?php if (is_author()) { echo get_the_author(); } ?>
+                        <div class="listing-hd listing-hd_isMuted">
+                            <h1 class="hdg hdg_sm mix-hdg_serif mix-hdg_kerningNarrow">
+                                Blog
+                                <span class="isVisuallyHidden">:
+                                <?php if (is_home()) { echo "Archive"; } ?>
+                                <?php if (is_tag()) { echo "Posts tagged with " . single_tag_title('', false); } ?>
+                                <?php if (is_category()) { echo "Posts filed under " . single_cat_title('', false); } ?>
+                                <?php if (is_author()) { echo "Authored by " . get_the_author(); } ?>
                                 <?php if (is_date()) {
                                     if (is_day()) { $archiveDate = get_the_date('F jS Y'); }
                                     elseif (is_month()) { $archiveDate = get_the_date('F Y'); }
                                     elseif (is_year()) { $archiveDate = get_the_date('Y'); }
                                     else { $archiveDate = "Unknown"; }
-                                    echo "From " . $archiveDate;
+                                    echo "Posts from " . $archiveDate;
                                 } ?>
+                                </span>
                             </h1>
                         </div>
                         <div class="listing-bd">

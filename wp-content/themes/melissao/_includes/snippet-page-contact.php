@@ -13,8 +13,8 @@
         <?php while (have_posts()) : the_post(); ?>
         <?php $pageImage = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large'); ?>
             <div class="section">
-                <div class="section-hd">
-                    <h1 class="isVisuallyHidden"><?php the_title(); ?></h1>
+                <div class="section-hd section-hd_isMuted">
+                    <h1 class="hdg hdg_sm mix-hdg_serif mix-hdg_kerningNarrow"><?php the_title(); ?></h1>
                 </div>
                 <?php if (get_post()->post_content) { ?>
                 <div class="section-bd section-bd_alt">
