@@ -103,6 +103,21 @@ function create_post_type_galleries() {
 require_once('aq_resizer.php');
 
 /**
+ * add class to prev / next post links
+ */
+function add_class_next_post_link($html){
+    $html = str_replace('<a','<a class="btn"',$html);
+    return $html;
+}
+add_filter('next_post_link','add_class_next_post_link',10,1);
+
+function add_class_previous_post_link($html){
+    $html = str_replace('<a','<a class="btn"',$html);
+    return $html;
+}
+add_filter('previous_post_link','add_class_previous_post_link',10,1);
+
+/**
  * Find the first image in a post.
  *
  * @return image URL
@@ -223,3 +238,17 @@ function commentsEnd() {
  * @return html
  */
 add_filter( 'wpcf7_load_css', '__return_false' );
+
+
+/**
+ * Disables Visual Editor from specific pages.
+ *
+ * @return html
+ */
+// removes rich text editor for certain pages
+function remove_pages_editor(){
+    if(get_the_ID() === 10864) {
+        remove_post_type_support( 'page', 'editor' );
+    } // end if
+} // end remove_pages_editor
+add_action( 'add_meta_boxes', 'remove_pages_editor' );

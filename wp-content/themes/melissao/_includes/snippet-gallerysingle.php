@@ -31,7 +31,9 @@
                 <?php get_template_part('_includes/shared', 'gallery'); ?>
             </div>
             <div class="post-cta">
-                <a class="btn" href="/galleries/">Back to All Galleries</a>
+                <?php // next and prev labels are reverse due to display on site - most recent is first. so next is actually previous ?>
+                <?php next_post_link('%link', '&laquo; Previous'); ?>
+                <?php previous_post_link('%link', 'Next &raquo;'); ?>
             </div>
         </div>
     </div>
