@@ -45,7 +45,7 @@
                     <div class="footer-legal">
                         <span class="footer-legal-lines">
                             <span class="footer-legal-lines-line">
-                                &copy; 2010 - <?php echo date('Y'); ?>
+                                &copy; 2009 - <?php echo date('Y'); ?>
                             </span>
                             <span class="footer-legal-lines-line">
                                 <?php bloginfo('name'); ?>
