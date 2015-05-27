@@ -118,7 +118,7 @@ body {
     background-color: #f2f2f2; /* creates the appearance of a sticky footer and colors it's background */
     color: #716d6c;
     font-family: Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.8;
 }
 
@@ -193,7 +193,7 @@ a:focus {
     .masthead-tagline {
         position: absolute;
         top: 80px; /* eyeball vertical center */
-        left: 340px; /* eyeballl horizontal center with remaining space */
+        left: 410px; /* eyeballl horizontal center with remaining space - adjusted by designer */
         right: 0;
         display: block;
         text-align: center;
