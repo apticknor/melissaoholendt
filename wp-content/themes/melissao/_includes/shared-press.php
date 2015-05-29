@@ -8,28 +8,29 @@
 
 ?>
 
-<ul class="vlist">
-<?php while ( have_rows('press') ) : the_row(); ?>
+<ul class="press">
+<?php while ( have_rows('press_items') ) : the_row(); ?>
 <?php
-    $image = get_sub_field('press_image');
-    $imageLocation = get_sub_field('press_image_location');
+    $image = get_sub_field('press_items_image');
 ?>
     <li>
-        <div class="note">
-            <div class="note-img <?php if ($imageLocation == "Right") { echo "note-img_flip"; } ?>">
-                <img src="<?php echo $image['sizes']['medium']; ?>" alt="" />
+        <div class="tile">
+            <div class="tile-media">
+                <a href="<?php the_sub_field('press_items_link'); ?>">
+                    <img src="<?php echo $image['sizes']['medium']; ?>" alt="" />
+                </a>
             </div>
-            <div class="note-bd">
-                <div class="post">
-                    <div class="post-hd">
-                        <h2 class="hdg hdg_md"><?php the_sub_field('press_title'); ?></h2>
-                    </div>
-                    <div class="post-bd">
-                        <div class="userContent">
-                            <?php the_sub_field('press_content'); ?>
-                        </div>
-                    </div>
-                </div>
+            <div class="tile-hd">
+                <h2 class="hdg hdg_sm mix-hdg_serif mix-hdg_kerningNarrow">
+                    <a href="<?php the_sub_field('press_items_link'); ?>">
+                        <?php the_sub_field('press_items_title'); ?>
+                    </a>
+                </h2>
+            </div>
+            <div class="tile-ft">
+                <span class="hdg hdg_xxs">
+                    <?php the_sub_field('press_items_date'); ?>
+                </span>
             </div>
         </div>
     </li>

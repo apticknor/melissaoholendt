@@ -39,7 +39,7 @@
                     </div>
                 </div>
 
-                <?php if( have_rows('press') ): ?>
+                <?php if( have_rows('press_items') ): ?>
                     <?php if (get_post()->post_content): ?>
                     <div class="section-separator">
                          <svg version="1.1" id="heart" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="128px" height="128px" viewBox="0 0 128 128" enable-background="new 0 0 128 128" xml:space="preserve">
