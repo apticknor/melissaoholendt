@@ -41,8 +41,13 @@
                 ?>
                 <div class="pods-unit">
                     <a href="<?php the_sub_field('ctas_link'); ?>">
-                        <img src="<?php echo $image['sizes']['medium']; ?>" alt="" />
-                        <?php the_sub_field('ctas_text'); ?>
+                        <div class="cta" style="background-image: url(<?php echo $image['sizes']['medium']; ?>);">
+                            <div class="cta-inner">
+                                <div class="cta-inner-txt">
+                                    <span class="hdg hdg_xxs"><?php the_sub_field('ctas_text'); ?></span>
+                                </div>
+                            </div>
+                        </div>
                     </a>
                 </div>
                 <?php endwhile; ?>

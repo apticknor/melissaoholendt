@@ -48,14 +48,20 @@
             'label_submit'      => __('Add Comment'),
             'format'            => 'xhtml',
 
-            'comment_field'         =>  '<label class="isVisuallyHidden" for="commentRepy">Comment</label>' .
-            '<textarea class="field field_txtMultiLine" id="commentRepy" name="commentRepy" aria-required="true" placeholder="Enter your comment"></textarea>',
+            'comment_field'         =>  '<label class="isVisuallyHidden" for="comment">Comment</label>' .
+            '<textarea class="field field_txtMultiLine" id="comment" name="comment" aria-required="true" placeholder="Enter your comment"></textarea>',
             'must_log_in'           => '',
             'logged_in_as'          => '',
             'comment_notes_before'  => '',
             'comment_notes_after'   => '',
-
-            'fields' => apply_filters('comment_form_default_fields', $fields)
+            'fields' => apply_filters('comment_form_default_fields', array(
+                'author' =>
+                    '<label class="isVisuallyHidden" for="author">' . __('Name', 'domainreference') . '</label> ' .
+                    '<input class="field field_push" placeholder="Name" id="author" name="author" aria-required="true" type="text" value="' . esc_attr($commenter['comment_author']) . '" />',
+                'email' =>
+                    '<label class="isVisuallyHidden" for="email">' . __( 'Email', 'domainreference' ) . '</label> ' .
+                    '<input class="field field_push" placeholder="E-mail Address" id="email" name="email" aria-required="true" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" />',
+            )),
         );
         comment_form($commentFormArgs); ?>
     </div>

@@ -15,13 +15,15 @@
 ?>
     <li>
         <div class="tile">
+            <?php if ($image) { ?>
             <div class="tile-media">
                 <a href="<?php the_sub_field('press_items_link'); ?>">
-                    <img src="<?php echo $image['sizes']['medium']; ?>" alt="" />
+                    <img src="<?php echo aq_resize($image['sizes']['medium'], 400); ?>" alt="" />
                 </a>
             </div>
+            <?php } ?>
             <div class="tile-hd">
-                <h2 class="hdg hdg_sm mix-hdg_serif mix-hdg_kerningNarrow">
+                <h2 class="hdg hdg_xs mix-hdg_serif mix-hdg_kerningNarrow">
                     <a href="<?php the_sub_field('press_items_link'); ?>">
                         <?php the_sub_field('press_items_title'); ?>
                     </a>
