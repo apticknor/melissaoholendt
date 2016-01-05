@@ -94,6 +94,15 @@ function create_post_type_galleries() {
     );
 }
 
+// ----------------------- Set the number of a custom post type posts per page
+add_filter( 'pre_get_posts', 'be_archive_query' );
+// @link http://www.billerickson.net/customize-the-wordpress-query/
+function be_archive_query( $query ) {
+	if( $query->is_main_query() && $query->is_post_type_archive('melissao_galleries') ) {
+		$query->set( 'posts_per_page', 100 );
+	}
+}
+
 /* ====================================================================================================
  Custom Functions
 ==================================================================================================== */
